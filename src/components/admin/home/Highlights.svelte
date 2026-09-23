@@ -4,12 +4,15 @@
 
     import { t } from "../../../i18n/store";
     import { apiProjectsGetCollection } from "../../../openapi/client/sdk.gen";
+    import { debounce } from "../../../utils/debounce";
+    import { toCollectionItems } from "../../../utils/hydra";
     import Button from "../../library/buttons/Button.svelte";
     import DropdownMenu from "../../library/dropdown/DropdownMenu.svelte";
     import RadioButton from "../../library/inputs/RadioButton.svelte";
     import Select from "../../library/inputs/Select.svelte";
     import Title from "../../library/typography/Title.svelte";
 
+    import type { Project } from "../../../openapi/client/types.gen";
     import type { DropdownOption } from "../../library/dropdown/dropdown.types";
 
     interface Props {
@@ -84,21 +87,32 @@
         }),
     );
 
-    async function handleSearch(query: string) {
-        if (!query || query.length < 2) {
-            searchOptions = [];
-            return;
-        }
-        const { data } = await apiProjectsGetCollection({
+    const searchProjects = debounce(async (title: string) => {
+        const { data, error } = await apiProjectsGetCollection({
             baseUrl: "/api/relay",
             headers: { Accept: "application/ld+json" },
-            query: { title: query, page: 1, itemsPerPage: 10 },
+            query: { title, itemsPerPage: 10 },
         });
-        searchOptions = (data ?? []).map((p) => ({
+
+        if (error) console.error("Project search failed:", error);
+
+        searchOptions = toCollectionItems<Project>(data).map((p) => ({
             id: String(p.id),
             label: p.title ?? p.slug ?? "",
             selected: false,
         }));
+    });
+
+    function handleSearch(query: string) {
+        const trimmed = query.trim();
+
+        if (trimmed.length < 2) {
+            searchProjects.cancel();
+            searchOptions = [];
+            return;
+        }
+
+        searchProjects(trimmed);
     }
 
     function handleAddProject(slotIndex: number) {
@@ -253,9 +267,9 @@
 <Modal
     bind:open={addOpen}
     closeBtnClass="top-3 end-3 cursor-pointer bg-transparent text-secondary hover:bg-transparent hover:text-secondary hover:scale-110 transition-transform duration-200 transform focus:ring-0 shadow-none dark:text-secondary dark:hover:text-secondary dark:hover:bg-transparent"
-    class="fixed top-1/2 left-1/2 mx-2 flex w-full max-w-172 -translate-x-1/2 -translate-y-1/2 flex-col gap-6 divide-y-0 rounded-3xl bg-white p-6 shadow-lg backdrop:bg-[#878282B2] backdrop:backdrop-blur-[5px] sm:mx-4 lg:mx-0"
+    class="fixed top-1/2 left-1/2 mx-2 flex w-full max-w-172 -translate-x-1/2 -translate-y-1/2 flex-col gap-6 divide-y-0 overflow-visible rounded-3xl bg-white p-6 shadow-lg backdrop:bg-[#878282B2] backdrop:backdrop-blur-[5px] sm:mx-4 lg:mx-0"
     headerClass="md:p-0 p-0 border-none"
-    bodyClass="md:p-0 p-0 border-none"
+    bodyClass="md:p-0 p-0 border-none overflow-y-visible"
     footerClass="md:p-0 p-0 border-none flex items-center justify-end gap-4"
 >
     {#snippet header()}
