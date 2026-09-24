@@ -15,30 +15,30 @@
 
 @theme {
     /* Light Theme (default) */
-    --color-primary: #59e9d3;
-    --color-secondary: #462949;
-    --color-tertiary: #e94668;
-    --color-content: #575757;
+    --color-primary: #FF4D9A;
+    --color-secondary: #2EE6F6;
+    --color-tertiary: #A66BFF;
+    --color-content: #F2F2F7;
 
     /* Extended color tokens for components */
-    --color-white: #fbfbfb;
-    --color-black: #3d3d3d;
-    --color-grey: #f3f3ef;
-    --color-purple-soft: #faf9ff;
-    --color-purple-med: #f6f5ff;
+    --color-white: #0F0F14;
+    --color-black: #FFFFFF;
+    --color-grey: #23262E;
+    --color-purple-soft: #171A22;
+    --color-purple-med: #211C36;
 
     /* Scrim tras diálogos y modales: gris cálido al 70% */
     --color-overlay: #878282b2;
 
-    --color-variant1: #e6e5f7;
-    --color-variant2: #99ffcc;
-    --color-variant3: #72d8ff;
-    --color-variant4: #ffff99;
+    --color-variant1: #4A1E2B;
+    --color-variant2: #24D3A1;
+    --color-variant3: #2EE6F6;
+    --color-variant4: #FFC857;
 
-    --color-semantic-error: #e9b1bd;
-    --color-semantic-success: #b1e9e1;
-    --color-semantic-notification: #c2eeff;
-    --color-semantic-warning: #ffffc2;
+    --color-semantic-error: #FF6B6B;
+    --color-semantic-success: #24D3A1;
+    --color-semantic-notification: #183B46;
+    --color-semantic-warning: #FFC857;
 
     /* Declared by the `<Font>` component in Layout.astro; already carries its own fallbacks. */
     --font-body: var(--font-karla);
