@@ -1,2 +1,2 @@
 -- Seed data for local development
--- Apply with: 'npx wrangler d1 execute goteo-db --local --file=./db/seed.sql' or just 'pnpm db:seed' 
+-- Apply with: 'pnpm db:seed' 

@@ -1,8 +1,8 @@
-# Goteo v4 Web
+# DTF's Goteo v4 Web client
 
-Frontend for the [Goteo](https://goteo.org) crowdfunding platform — built on Astro 7 + Svelte 5 + TailwindCSS 4, deployed on Cloudflare Workers.
+Frontend for the [DTF](https://democratictech.fund) crowdfunding site — built on Astro 7 + Svelte 5 + TailwindCSS 4, deployed on Cloudflare Workers.
 
-> **NOTE**: This application is a client of the [Goteo v4 API](https://github.com/goteo/org.goteo.api). You need a running v4 API instance and an OAuth client registered in it before this web app will work.
+> **NOTE**: This application is a client of the [Goteo v4 API](https://github.com/goteo/v4-api). You need a running v4 API instance and an OAuth client registered in it before this web app will work.
 
 ## Installation
 
@@ -11,8 +11,8 @@ This application requires [Node.js](https://nodejs.org/en/download) (v22.12 or l
 ### 1. Clone or download this repository.
 
 ```shell
-git clone https://github.com/goteo/org.goteo.www
-cd org.goteo.www
+git clone https://git.coopcloud.tech/DemocraticTech.Fund/crowd-fund-web
+cd crowd-fund-web
 ```
 
 ### 2. Install the dependencies.

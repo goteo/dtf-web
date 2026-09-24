@@ -1,4 +1,4 @@
-name = "goteov4web-app"
+name = "dtfcrowd-app"
 main = "@astrojs/cloudflare/entrypoints/server"
 compatibility_date = "2025-06-26"
 compatibility_flags = ["nodejs_compat"]
@@ -12,8 +12,8 @@ keep_vars = true
 
 [[d1_databases]]
 binding = "DB"
-database_name = "goteov4web-db"
-database_id = "1f119ee7-358a-4eba-b076-40248d4f28f6"
+database_name = "dtfcrowd-db"
+database_id = "6c3e6748-7e5c-450d-9565-d24739442341"
 migrations_dir = "db/migrations"
 
 
@@ -27,38 +27,20 @@ enabled = true
 
 
 # ============================================================================
-# TESTING
-# ============================================================================
-
-[env.testing]
-name = "goteov4web-app-testing"
-
-routes = [
-    { pattern = "testing.v4.goteo.org", zone_name = "goteo.org", custom_domain = true },
-]
-
-[[env.testing.d1_databases]]
-binding = "DB"
-database_name = "goteov4web-db-testing"
-database_id = "5f54dc4e-811b-438b-b83e-9acee224f250"
-migrations_dir = "db/migrations"
-
-
-# ============================================================================
 # STAGING
 # ============================================================================
 
 [env.staging]
-name = "goteov4web-app-staging"
+name = "dtfcrowd-app-staging"
 
 routes = [
-    { pattern = "staging.v4.goteo.org", zone_name = "goteo.org", custom_domain = true },
+    { pattern = "dtf-staging.v4.goteo.org", zone_name = "goteo.org", custom_domain = true },
 ]
 
 [[env.staging.d1_databases]]
 binding = "DB"
-database_name = "goteov4web-db-staging"
-database_id = "b6afee51-6e91-4e25-b7c0-fb9b166b4cda"
+database_name = "dtfcrowd-db-staging"
+database_id = "9c338a5d-f860-488c-b0c0-46b5b74f0492"
 migrations_dir = "db/migrations"
 
 
@@ -67,14 +49,14 @@ migrations_dir = "db/migrations"
 # ============================================================================
 
 [env.prod]
-name = "goteov4web-app-prod"
+name = "dtfcrowd-app-prod"
 
 routes = [
-    { pattern = "v4.goteo.org", zone_name = "goteo.org", custom_domain = true },
+    { pattern = "dtf.v4.goteo.org", zone_name = "goteo.org", custom_domain = true },
 ]
 
 [[env.prod.d1_databases]]
 binding = "DB"
-database_name = "goteov4web-db-prod"
-database_id = "65fe9b71-9263-400e-ae7f-7d899493ee99"
+database_name = "dtfcrowd-db-prod"
+database_id = "b682c189-c6f2-4932-aae0-f08185efeba9"
 migrations_dir = "db/migrations"
