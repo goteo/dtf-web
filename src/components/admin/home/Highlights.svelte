@@ -6,8 +6,10 @@
     import { apiProjectsGetCollection } from "../../../openapi/client/sdk.gen";
     import { debounce } from "../../../utils/debounce";
     import { toCollectionItems } from "../../../utils/hydra";
+    import ActionableButton from "../../library/buttons/ActionableButton.svelte";
     import Button from "../../library/buttons/Button.svelte";
     import DropdownMenu from "../../library/dropdown/DropdownMenu.svelte";
+    import Toast from "../../library/feedback/Toast.svelte";
     import RadioButton from "../../library/inputs/RadioButton.svelte";
     import Select from "../../library/inputs/Select.svelte";
     import Title from "../../library/typography/Title.svelte";
@@ -15,13 +17,20 @@
     import type { Project } from "../../../openapi/client/types.gen";
     import type { DropdownOption } from "../../library/dropdown/dropdown.types";
 
+    interface SlotAssignment {
+        position: number;
+        projectId: number;
+        projectTitle: string;
+        projectImage: string | null;
+    }
+
     interface Props {
         config: {
             highlight: {
                 type: string;
                 layout: string;
             } | null;
-            slots: { position: number; projectId: number }[];
+            slots: SlotAssignment[];
         };
     }
 
@@ -65,26 +74,16 @@
     let searchOptions = $state<DropdownOption[]>([]);
     let selectedOption = $state<DropdownOption[]>([]);
     let editingSlotIndex = $state<number | null>(null);
+    let searchResults: Project[] = [];
+    let showError = $state(false);
+    let errorMessage = $state("");
 
-    let slotAssignments = $state<{ position: number; projectId: number; projectTitle: string }[]>(
-        config.slots.map((s) => ({
-            position: s.position,
-            projectId: s.projectId,
-            projectTitle: String(s.projectId),
-        })),
-    );
+    let slotAssignments = $state<SlotAssignment[]>(config.slots);
 
     let slotCount = $derived(LAYOUTS.find((l) => l.id === layout)?.rows.flat().length ?? 0);
 
     let slots = $derived(
-        Array.from({ length: slotCount }, (_, i) => {
-            const assignment = slotAssignments.find((a) => a.position === i);
-            return {
-                position: i,
-                projectId: assignment?.projectId ?? null,
-                projectTitle: assignment?.projectTitle ?? null,
-            };
-        }),
+        Array.from({ length: slotCount }, (_, i) => slotAssignments.find((a) => a.position === i)),
     );
 
     const searchProjects = debounce(async (title: string) => {
@@ -96,7 +95,8 @@
 
         if (error) console.error("Project search failed:", error);
 
-        searchOptions = toCollectionItems<Project>(data).map((p) => ({
+        searchResults = toCollectionItems<Project>(data);
+        searchOptions = searchResults.map((p) => ({
             id: String(p.id),
             label: p.title ?? p.slug ?? "",
             selected: false,
@@ -126,12 +126,14 @@
     function handleConfirmAdd() {
         if (editingSlotIndex === null || selectedOption.length === 0) return;
         const chosen = selectedOption[0];
+        const project = searchResults.find((p) => String(p.id) === chosen.id);
         slotAssignments = [
             ...slotAssignments.filter((a) => a.position !== editingSlotIndex),
             {
                 position: editingSlotIndex,
                 projectId: Number(chosen.id),
                 projectTitle: chosen.label,
+                projectImage: project?.video?.thumbnail ?? project?.cover ?? null,
             },
         ];
         addOpen = false;
@@ -146,7 +148,12 @@
         const projectIds = slotAssignments
             .sort((a, b) => a.position - b.position)
             .map((a) => a.projectId);
-        await actions.saveHighlights({ type, layout, slots: projectIds });
+        const { error } = await actions.saveHighlights({ type, layout, slots: projectIds });
+
+        if (error) {
+            errorMessage = error.message;
+            showError = true;
+        }
     }
 </script>
 
@@ -156,9 +163,9 @@
             <Title level={2} variant="headline">{$t("pages.admin.home.highlights.title")}</Title>
             <p class="text-content text-base">{$t("pages.admin.home.highlights.description")}</p>
         </div>
-        <Button size="sm" class="shrink-0" onclick={handleSave}>
+        <ActionableButton action={handleSave} autoreset={2000} class="w-fit shrink-0 px-6">
             {$t("common.save")}
-        </Button>
+        </ActionableButton>
     </header>
 
     <section class="flex flex-col gap-4">
@@ -200,7 +207,7 @@
                             <div class="grid grid-cols-6 gap-2">
                                 {#each row as span}
                                     <div
-                                        class="h-10 rounded-lg {span} {selected
+                                        class="h-21 rounded-lg {span} {selected
                                             ? 'bg-primary'
                                             : 'bg-grey'}"
                                     ></div>
@@ -230,7 +237,14 @@
                             number: String(index + 1).padStart(2, "0"),
                         })}
                     </p>
-                    {#if slot.projectId}
+                    {#if slot}
+                        {#if slot.projectImage}
+                            <img
+                                src={slot.projectImage}
+                                alt={slot.projectTitle}
+                                class="aspect-video w-full rounded-lg object-cover"
+                            />
+                        {/if}
                         <p class="text-content text-body-small font-medium">
                             {slot.projectTitle}
                         </p>
@@ -263,6 +277,8 @@
         </div>
     </section>
 </div>
+
+<Toast variant="error" bind:showToast={showError}>{errorMessage}</Toast>
 
 <Modal
     bind:open={addOpen}
