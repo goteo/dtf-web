@@ -177,7 +177,7 @@ Converted from CampaignCard.astro to maintain exact functionality
                 <Title
                     level={3}
                     variant="subsection"
-                    color="secondary"
+                    color="default"
                     class="h-16 overflow-hidden leading-8"
                 >
                     {campaign.title}

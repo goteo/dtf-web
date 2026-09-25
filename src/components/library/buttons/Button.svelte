@@ -40,7 +40,7 @@
 
     const buttonClass = $derived(
         twMerge(
-            "text-secondary disabled:bg-grey flex w-auto items-center justify-center gap-2 font-bold transition hover:cursor-pointer",
+            "text-content disabled:bg-grey flex w-auto items-center justify-center gap-2 font-bold transition hover:cursor-pointer",
             sizeStyles[size],
             kindStyles[kind],
             href && "hover:underline",

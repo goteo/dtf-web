@@ -26,7 +26,7 @@
                 <!-- Hero Content -->
                 <div class={["space-y-8", !hasMedia && "lg:col-span-2"]}>
                     <h1
-                        class="text-secondary text-4xl leading-tight font-bold lg:text-5xl xl:text-6xl"
+                        class="text-primary text-4xl leading-tight font-bold lg:text-5xl xl:text-6xl"
                     >
                         {hero.title}
                     </h1>
