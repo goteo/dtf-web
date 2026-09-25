@@ -336,6 +336,7 @@
     "viewLess": "Ver menos",
     "share": "Compartir",
     "noData": "No hay datos disponibles",
+    "noOptions": "No hay opciones disponibles",
     "tooltip": {
       "copied": "¡Copiado!"
     },
