@@ -73,7 +73,7 @@
     {/if}
 
     <div
-        class="bg-white text-black relative rounded-t-3xl bg-size-[116%_114%] bg-position-[-127%_42%] bg-no-repeat min-[700px]:bg-size-[64%_108%] min-[700px]:bg-position-[114%]"
+        class="relative rounded-t-3xl bg-white bg-size-[116%_114%] bg-position-[-127%_42%] bg-no-repeat text-black min-[700px]:bg-size-[64%_108%] min-[700px]:bg-position-[114%]"
         style="background-image: url('{config.brand.backgroundImage}');"
     >
         <!-- Main Footer Content -->
@@ -94,11 +94,7 @@
 
                         {#each config.navColumns as column (column.titleKey)}
                             <div class="space-y-2">
-                                <Title
-                                    level={4}
-                                    variant="field"
-                                    class="leading-6"
-                                >
+                                <Title level={4} variant="field" class="leading-6">
                                     {$t(column.titleKey)}
                                 </Title>
                                 <ul class="space-y-1 text-xs leading-5 sm:text-sm sm:leading-6">

@@ -1,9 +1,4 @@
-import Facebook from "../components/icons/social/Facebook.svelte";
-import Gmail from "../components/icons/social/Gmail.svelte";
-import Instagram from "../components/icons/social/Instagram.svelte";
-import Linkedin from "../components/icons/social/Linkedin.svelte";
 import Mastodon from "../components/icons/social/Mastodon.svelte";
-import X from "../components/icons/social/X.svelte";
 
 import type { FooterConfig } from "../types/footer";
 

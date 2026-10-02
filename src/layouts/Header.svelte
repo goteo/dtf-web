@@ -6,7 +6,6 @@
     import HeaderButtons from "../components/header/HeaderButtons.svelte";
     import UiLanguages from "../components/header/UiLanguages.svelte";
     import Logo from "../components/icons/Logo.svelte";
-    import Hamburger from "../components/icons/navigation/Hamburger.svelte";
     import UserIcon from "../components/icons/user/User.svelte";
     import { t } from "../i18n/store";
     import { cartCount } from "../stores/checkoutsStore";
@@ -35,7 +34,7 @@
 <header class="fixed top-0 z-100 w-full px-2 pt-6 md:px-6 md:pt-8">
     <div class="mx-auto max-w-360 px-2">
         <div
-            class="border-none flex flex-col rounded-xl border bg-white/50 backdrop-blur-xl"
+            class="flex flex-col rounded-xl border border-none bg-white/50 backdrop-blur-xl"
             id="header-container"
         >
             <div

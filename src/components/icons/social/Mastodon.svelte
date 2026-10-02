@@ -11,8 +11,8 @@
 </script>
 
 <svg
-    width={width}
-    height={height}
+    {width}
+    {height}
     viewBox="0 0 74 79"
     class={twMerge("fill-current", classes)}
     xmlns="http://www.w3.org/2000/svg"

@@ -34,15 +34,14 @@ const calls: CallCard[] = [
         // Figma CTA copy
         cta: "Inscríbete en la convocatoria",
         background: "/images/home/megafono.png",
-        tag: "/images/project/09_shelf_ARCHICARE.svg"
+        tag: "/images/project/09_shelf_ARCHICARE.svg",
     },
     {
         title: "Distributed infrastructures",
         stats: [],
         cta: "Ver las campañas de la convocatoria",
         background: "/images/home/unions.png",
-        tag: "/images/project/10_shelf_DisInfra.svg"
-
+        tag: "/images/project/10_shelf_DisInfra.svg",
     },
 ];
 ---
@@ -108,9 +107,9 @@ const calls: CallCard[] = [
                                     {card.cta}
                                 </a>
                             </div>
-                                <div class="bg-white border-xl absolute top-6 right-6 z-20 rounded px-2 py-1 text-xs font-medium ">
-                                    <img class="h-12" src={card.tag}/>
-                                </div>
+                            <div class="border-xl absolute top-6 right-6 z-20 rounded bg-white px-2 py-1 text-xs font-medium">
+                                <img class="h-12" src={card.tag} />
+                            </div>
                             <div class="pointer-events-none absolute inset-0 z-0 bg-gradient-to-r from-black/70 to-black/30" />
                         </div>
                     ))

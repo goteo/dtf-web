@@ -13,7 +13,7 @@
 </script>
 
 <div class="flex gap-2">
-    <Button size="md" kind="ghost" onclick={openSearch} class="border-none inset-0 inset-ring-0">
+    <Button size="md" kind="ghost" onclick={openSearch} class="inset-0 border-none inset-ring-0">
         <SearchIcon width="32" height="32" class="text-content" />
     </Button>
     <Button size="md" kind="primary" onclick={goToCreateProject}>

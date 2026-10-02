@@ -99,7 +99,7 @@ Converted from CampaignCard.astro to maintain exact functionality
 
 <div
     class={twMerge(
-        "border-grey grow basis-0 rounded-xl border-2 bg-purple-soft shadow-[0px_1px_3px_0px_rgba(0,0,0,0.1)]",
+        "border-grey bg-purple-soft grow basis-0 rounded-xl border-2 shadow-[0px_1px_3px_0px_rgba(0,0,0,0.1)]",
         sizeClasses,
         className,
     )}
@@ -141,7 +141,7 @@ Converted from CampaignCard.astro to maintain exact functionality
             </div>
 
             <!-- Project Content -->
-            <div class="flex flex-col gap-4 md:gap-6 p-6">
+            <div class="flex flex-col gap-4 p-6 md:gap-6">
                 <!-- Days Remaining & Category -->
                 <div class="flex items-center gap-2 md:gap-4">
                     <!-- Status Tag (owned projects section) -->
