@@ -13,11 +13,10 @@
 </script>
 
 <div class="flex gap-2">
-    <Button size="sm" kind="secondary" onclick={openSearch}>
-        <SearchIcon width="16" height="16" />
-        {$t("common.header.search")}
+    <Button size="md" kind="ghost" onclick={openSearch} class="border-none inset-0 inset-ring-0">
+        <SearchIcon width="32" height="32" class="text-content" />
     </Button>
-    <Button size="sm" kind="primary" onclick={goToCreateProject}>
+    <Button size="md" kind="primary" onclick={goToCreateProject}>
         {$t("common.header.createProject")}
     </Button>
 </div>
