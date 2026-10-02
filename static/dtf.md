@@ -18,7 +18,7 @@ We don’t need to start from zero. Alternatives already exist. DTF connects the
 
 **Federate** Shared infrastructure, resources and solidarity across communities, cities and borders.
 
-DTF is not only about replacing one piece of software with another. It is about reclaiming the infrastructures through which we **live, organise, care, remember and act together**. 
+DTF is not only about replacing one piece of software with another. It is about reclaiming the infrastructures through which we **live, organise, care, remember and act together**.
 
 # **DTF BY GOTEO**
 
