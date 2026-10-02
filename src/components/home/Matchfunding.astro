@@ -20,6 +20,7 @@ interface CallCardStat {
 
 interface CallCard {
     title: string;
+    description: string;
     stats: CallCardStat[]; // supports 2 or more stats depending on the card
     cta: string;
     tag?: string;
@@ -29,7 +30,8 @@ interface CallCard {
 
 const calls: CallCard[] = [
     {
-        title: "Archicare",
+        title: "Archicare.\nKeep democratic memory alive. Put it to work.",
+        description: "Archicare supports feminist and community-led projects that preserve democratic memory and turn archives and lived experience into infrastructures for care, resistance and collective action.",
         stats: [],
         // Figma CTA copy
         cta: "Inscríbete en la convocatoria",
@@ -37,7 +39,8 @@ const calls: CallCard[] = [
         tag: "/images/project/09_shelf_ARCHICARE.svg",
     },
     {
-        title: "Distributed infrastructures",
+        title: "Distributed infrastructures.\nOwn the infrastructure. Share the power.",
+        description: "Building community-owned, cooperative and federated alternatives to platform dependency",
         stats: [],
         cta: "Ver las campañas de la convocatoria",
         background: "/images/home/unions.png",
@@ -85,12 +88,13 @@ const calls: CallCard[] = [
                 {
                     calls.map((card) => (
                         <div
-                            class="relative flex w-full flex-col justify-between overflow-hidden rounded-xl bg-cover bg-center text-white lg:w-1/2"
+                            class="relative flex w-full flex-col justify-between overflow-hidden rounded-xl bg-cover bg-center text-white text-shadow-2xs lg:w-1/2"
                             style={`background-image:url(${card.background});`}
                         >
                             <div class="relative z-10 flex flex-col gap-10 p-10">
                                 <div class="flex flex-col gap-4">
                                     <h4 class="text-3xl font-bold">{card.title}</h4>
+                                    <p>{card.description}</p>
                                     <div class="flex gap-6">
                                         {card.stats.map((s) => (
                                             <div class="flex flex-col">
@@ -100,12 +104,6 @@ const calls: CallCard[] = [
                                         ))}
                                     </div>
                                 </div>
-                                <a
-                                    href="/convocatorias"
-                                    class="bg-purple-soft text-content w-fit rounded-xl px-6 py-4 text-sm font-bold transition hover:opacity-90"
-                                >
-                                    {card.cta}
-                                </a>
                             </div>
                             <div class="border-xl absolute top-6 right-6 z-20 rounded bg-white px-2 py-1 text-xs font-medium">
                                 <img class="h-12" src={card.tag} />
