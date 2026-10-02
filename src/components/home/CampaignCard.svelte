@@ -99,7 +99,7 @@ Converted from CampaignCard.astro to maintain exact functionality
 
 <div
     class={twMerge(
-        "border-grey grow basis-0 rounded-xl border bg-purple-soft shadow-[0px_1px_3px_0px_rgba(0,0,0,0.1)]",
+        "border-grey grow basis-0 rounded-xl border-2 bg-purple-soft shadow-[0px_1px_3px_0px_rgba(0,0,0,0.1)]",
         sizeClasses,
         className,
     )}

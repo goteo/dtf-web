@@ -66,13 +66,13 @@ const calls: CallCard[] = [
                     <div class="flex flex-wrap gap-4">
                         <a
                             href="/matchfunding"
-                            class="group relative flex items-center gap-2 rounded-3xl border border-white/40 bg-white/20 px-6 py-4 text-sm font-bold text-white backdrop-blur-md transition hover:bg-white/30"
+                            class="group relative flex items-center gap-2 rounded-xl border border-white/40 bg-white/20 px-6 py-4 text-sm font-bold text-white backdrop-blur-md transition hover:bg-white/30"
                         >
                             {t("pages.home.matchfunding.actions.learnMore")}
                         </a>
                         <a
                             href="/convocatorias"
-                            class="bg-purple-soft text-content rounded-3xl px-6 py-4 text-sm font-bold transition hover:opacity-90"
+                            class="bg-purple-soft text-content rounded-xl px-6 py-4 text-sm font-bold transition hover:opacity-90"
                         >
                             {t("pages.home.matchfunding.actions.viewCalls")}
                         </a>
@@ -85,7 +85,7 @@ const calls: CallCard[] = [
                 {
                     calls.map((card) => (
                         <div
-                            class="relative flex w-full flex-col justify-between overflow-hidden rounded-3xl bg-cover bg-center text-white lg:w-1/2"
+                            class="relative flex w-full flex-col justify-between overflow-hidden rounded-xl bg-cover bg-center text-white lg:w-1/2"
                             style={`background-image:url(${card.background});`}
                         >
                             <div class="relative z-10 flex flex-col gap-10 p-10">
@@ -102,7 +102,7 @@ const calls: CallCard[] = [
                                 </div>
                                 <a
                                     href="/convocatorias"
-                                    class="bg-purple-soft text-content w-fit rounded-3xl px-6 py-4 text-sm font-bold transition hover:opacity-90"
+                                    class="bg-purple-soft text-content w-fit rounded-xl px-6 py-4 text-sm font-bold transition hover:opacity-90"
                                 >
                                     {card.cta}
                                 </a>
