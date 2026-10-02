@@ -73,7 +73,7 @@
     {/if}
 
     <div
-        class="bg-secondary relative rounded-t-3xl bg-size-[116%_114%] bg-position-[-127%_42%] bg-no-repeat min-[700px]:bg-size-[64%_108%] min-[700px]:bg-position-[114%]"
+        class="bg-white text-black relative rounded-t-3xl bg-size-[116%_114%] bg-position-[-127%_42%] bg-no-repeat min-[700px]:bg-size-[64%_108%] min-[700px]:bg-position-[114%]"
         style="background-image: url('{config.brand.backgroundImage}');"
     >
         <!-- Main Footer Content -->

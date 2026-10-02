@@ -11,9 +11,7 @@ export const FOOTER_DATA: FooterConfig = {
         { src: "/images/partners/PLATONIQ.png", alt: "Platoniq Foundation" },
         { src: "/images/partners/FKI.svg", alt: "Free Knowledge Institute" },
         { src: "/images/partners/COMMONSNETWORK.jpeg", alt: "Commons Network" },
-        { src: "/images/partners/ECOMMONS.svg", alt: "eCommons" },
         { src: "/images/partners/OPENTECH.png", alt: "OpenTech AUC" },
-        { src: "/images/partners/PLATFORMCOOPS.svg", alt: "Platform Coops" },
     ],
     partOf: [],
     navColumns: [

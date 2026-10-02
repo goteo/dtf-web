@@ -39,7 +39,7 @@
                         {#if hero.primaryCtaText && hero.primaryCtaLink}
                             <a
                                 href={hero.primaryCtaLink}
-                                class="text-secondary bg-purple-soft inline-block rounded-full border-0 px-8 py-4 text-center font-semibold whitespace-nowrap transition-all duration-200 hover:opacity-90"
+                                class="text-primary bg-purple-soft inline-block rounded-full border-0 px-8 py-4 text-center font-semibold whitespace-nowrap transition-all duration-200 hover:opacity-90"
                             >
                                 {hero.primaryCtaText}
                             </a>
@@ -47,7 +47,7 @@
                         {#if hero.secondaryCtaText && hero.secondaryCtaLink}
                             <a
                                 href={hero.secondaryCtaLink}
-                                class="bg-primary text-secondary inline-block rounded-full border-0 px-8 py-4 text-center font-semibold whitespace-nowrap transition-all duration-200 hover:opacity-90"
+                                class="text-content inline-block rounded-full border-0 px-8 py-4 text-center font-semibold whitespace-nowrap transition-all duration-200 hover:opacity-90"
                             >
                                 {hero.secondaryCtaText}
                             </a>
