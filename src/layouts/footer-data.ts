@@ -8,102 +8,25 @@ import type { FooterConfig } from "../types/footer";
 
 export const FOOTER_DATA: FooterConfig = {
     funding: [
-        { src: "/images/partners/NGEU.png", alt: "Funded by the European Union NextGeneration EU" },
-        { src: "/images/partners/MTES.png", alt: "Ministerio de Trabajo y Economía Social" },
-        {
-            src: "/images/partners/PRTR.png",
-            alt: "Plan de Recuperación, Transformación y Resiliencia",
-        },
+        { src: "/images/partners/PLATONIQ.png", alt: "Platoniq Foundation" },
+        { src: "/images/partners/FKI.svg", alt: "Free Knowledge Institute" },
+        { src: "/images/partners/COMMONSNETWORK.jpeg", alt: "Commons Network" },
+        { src: "/images/partners/ECOMMONS.svg", alt: "eCommons" },
+        { src: "/images/partners/OPENTECH.png", alt: "OpenTech AUC" },
+        { src: "/images/partners/PLATFORMCOOPS.svg", alt: "Platform Coops" },
     ],
-    partOf: [
-        {
-            src: "/images/partners/xes.png",
-            alt: "XES - Xarxa d'Economia Solidària",
-            href: "https://xes.cat",
-            size: "medium",
-            class: "rounded-lg",
-        },
-        {
-            src: "/images/partners/alda-europe.svg",
-            alt: "Alda Europe - European Association for Local Democracy",
-            href: "https://www.alda-europe.eu",
-            size: "medium",
-            class: "rounded-lg",
-        },
-        {
-            src: "/images/partners/alianza-por-el-clima.webp",
-            alt: "Alianza por el Clima",
-            href: "https://alianzaporelclima.org",
-            size: "medium",
-            class: "rounded-lg",
-        },
-        {
-            src: "/images/partners/ampliando-democracia.jpg",
-            alt: "Ampliando Democracia",
-            href: "https://ampliandodemocracia.org",
-            size: "medium",
-            class: "rounded-lg",
-        },
-    ],
+    partOf: [],
     navColumns: [
         {
             titleKey: "common.footer.navigation.collaborate.title",
             links: [
                 {
-                    href: "/create-project",
+                    href: "/about",
                     labelKey: "common.footer.navigation.collaborate.createProject",
                 },
                 {
-                    href: "/matchfunding",
+                    href: "/about#dtf",
                     labelKey: "common.footer.navigation.collaborate.matchfunding",
-                },
-                { href: "/workshops", labelKey: "common.footer.navigation.collaborate.workshops" },
-            ],
-        },
-        {
-            titleKey: "common.footer.navigation.help.title",
-            links: [
-                { href: "/faqs", labelKey: "common.footer.navigation.help.faqs" },
-                { href: "/contact", labelKey: "common.footer.navigation.help.contact" },
-                {
-                    href: "/tax-calculator",
-                    labelKey: "common.footer.navigation.help.taxCalculator",
-                },
-            ],
-        },
-        {
-            titleKey: "common.footer.navigation.aboutGoteo.title",
-            links: [
-                { href: "/about", labelKey: "common.footer.navigation.aboutGoteo.whoWeAre" },
-                {
-                    href: "/benefits",
-                    labelKey: "common.footer.navigation.aboutGoteo.goteoBenefits",
-                },
-                {
-                    href: "/impact",
-                    labelKey: "common.footer.navigation.aboutGoteo.foundationImpact",
-                },
-                {
-                    href: "/platoniq",
-                    labelKey: "common.footer.navigation.aboutGoteo.platoniqFoundation",
-                },
-            ],
-        },
-        {
-            titleKey: "common.footer.navigation.forUsers.title",
-            links: [
-                { href: "/wallet", labelKey: "common.footer.navigation.forUsers.rechargeWallet" },
-                // GOTEO-OC-DONATION-CERTIFICATE: "Descarga certificado" link is exclusive to
-                // the donation-certificate feature of Goteo under Fundación Platoniq, hidden
-                // in the open-core.
-                // { href: "/certificate", labelKey: "common.footer.navigation.forUsers.downloadCertificate" },
-                {
-                    href: "/funds",
-                    labelKey: "common.footer.navigation.forUsers.accessComplementaryFunds",
-                },
-                {
-                    href: "/program",
-                    labelKey: "common.footer.navigation.forUsers.designFundingProgram",
                 },
             ],
         },
