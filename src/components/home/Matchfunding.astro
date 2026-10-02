@@ -36,7 +36,7 @@ const calls: CallCard[] = [
         stats: [],
         // Figma CTA copy
         cta: "Inscríbete en la convocatoria",
-        background: "/images/home/megafono.png",
+        background: "/images/home/archicare-purple.png",
         tag: "/images/project/09_shelf_ARCHICARE.svg",
     },
     {
@@ -45,7 +45,7 @@ const calls: CallCard[] = [
             "Building community-owned, cooperative and federated alternatives to platform dependency",
         stats: [],
         cta: "Ver las campañas de la convocatoria",
-        background: "/images/home/unions.png",
+        background: "/images/home/distrib-transparent.png",
         tag: "/images/project/10_shelf_DisInfra.svg",
     },
 ];
@@ -90,11 +90,11 @@ const calls: CallCard[] = [
                 {
                     calls.map((card) => (
                         <div
-                            class="relative flex w-full flex-col justify-between overflow-hidden rounded-xl bg-cover bg-center text-white text-shadow-2xs lg:w-1/2"
+                            class="relative flex w-full flex-col justify-between overflow-hidden rounded-xl bg-cover bg-center text-shadow-2xs lg:w-1/2"
                             style={`background-image:url(${card.background});`}
                         >
                             <div class="relative z-10 flex flex-col gap-10 p-10">
-                                <div class="flex flex-col gap-4">
+                                <div class="flex flex-col gap-4 w-1/2">
                                     <h4 class="text-3xl font-bold">{card.title}</h4>
                                     <p>{card.description}</p>
                                     <div class="flex gap-6">
