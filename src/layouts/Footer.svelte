@@ -97,7 +97,6 @@
                                 <Title
                                     level={4}
                                     variant="field"
-                                    color="purple-soft"
                                     class="leading-6"
                                 >
                                     {$t(column.titleKey)}
@@ -174,7 +173,7 @@
                         </div>
 
                         <!-- Platoniq Foundation -->
-                        <div class="text-variant1 flex flex-col items-center lg:items-start">
+                        <div class="flex flex-col items-center lg:items-start">
                             <img
                                 src={config.brand.platoniq.src}
                                 alt={config.brand.platoniq.alt}
