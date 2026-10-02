@@ -99,17 +99,17 @@ Converted from CampaignCard.astro to maintain exact functionality
 
 <div
     class={twMerge(
-        "border-grey grow basis-0 rounded-4xl border bg-white p-6 shadow-[0px_1px_3px_0px_rgba(0,0,0,0.1)]",
+        "border-grey grow basis-0 rounded-xl border bg-purple-soft shadow-[0px_1px_3px_0px_rgba(0,0,0,0.1)]",
         sizeClasses,
         className,
     )}
     data-testid="campaign-card"
 >
     <a href="/project/{campaign.slug}">
-        <div class="flex flex-col gap-4 md:gap-6">
+        <div class="flex flex-col gap-4">
             <!-- Project Image -->
             <div
-                class="relative {imageHeight} w-full rounded-3xl bg-cover bg-center"
+                class="relative {imageHeight} w-full rounded-t-xl bg-cover bg-center"
                 style="background-image: url('{campaign.image}')"
             >
                 <!-- Tags Overlay (top-left) -->
@@ -141,7 +141,7 @@ Converted from CampaignCard.astro to maintain exact functionality
             </div>
 
             <!-- Project Content -->
-            <div class="flex flex-col gap-4 md:gap-6">
+            <div class="flex flex-col gap-4 md:gap-6 p-6">
                 <!-- Days Remaining & Category -->
                 <div class="flex items-center gap-2 md:gap-4">
                     <!-- Status Tag (owned projects section) -->
