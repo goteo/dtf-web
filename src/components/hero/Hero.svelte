@@ -16,7 +16,7 @@
 
 {#if hero}
     <section class="wrapper hero-section flex">
-        <div class="container mx-auto py-16 lg:py-24">
+        <div class="container mx-auto py-16 lg:py-12">
             <Grid
                 class={[
                     "grid-cols-1 items-center gap-12",
