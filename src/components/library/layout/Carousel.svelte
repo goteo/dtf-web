@@ -46,7 +46,7 @@
     const wrapperClasses = $derived(twMerge("relative w-full", classes));
     const navButtonClasses: ClassNameValue = $derived(
         twMerge(
-            "bg-variant1 absolute z-10 hidden h-10 w-10 rounded-full p-2 shadow-md disabled:opacity-50 lg:block",
+            "bg-purple-med absolute z-10 hidden h-10 w-10 rounded-full p-2 shadow-md disabled:opacity-50 lg:block",
             centerNavButtons ? "-translate-y-1/2" : "",
         ),
     );
