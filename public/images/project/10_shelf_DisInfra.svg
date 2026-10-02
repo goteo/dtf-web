@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="140" height="150" viewBox="0 0 140 150">
+
+<g fill="none" stroke="#2EE6F6" stroke-width="7" stroke-linejoin="round">
+<path d="M70 12 L118 36 L70 60 L22 36 Z"/>
+<path d="M22 54 L70 78 L118 54"/>
+<path d="M22 72 L70 96 L118 72"/>
+</g>
+<text x="70" y="120" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#F2F2F7">DISTRIBUTED</text>
+<text x="70" y="137" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#F2F2F7">INFRASTRUCTURES</text>
+
+</svg>
