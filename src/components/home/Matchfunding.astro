@@ -31,27 +31,17 @@ interface CallCard {
 
 const calls: CallCard[] = [
     {
-        title: "Hacendera de proyectos",
-        stats: [
-            { label: t("pages.home.matchfunding.cards.grant"), value: "200.000€" },
-            { label: t("pages.home.matchfunding.cards.inscription"), value: "15/08/2025" },
-        ],
+        title: "Archicare",
+        stats: [],
         // Figma CTA copy
         cta: "Inscríbete en la convocatoria",
         background: hacenderaImage.src,
     },
     {
-        title: "Reeixim L`oesst",
-        stats: [
-            { label: t("pages.home.matchfunding.cards.grant"), value: "200.000€" },
-            { label: t("pages.home.matchfunding.cards.participants"), value: "15 proyectos" },
-            // TODO i18n: add proper key for "Proyectos acabados con éxito"
-            { label: "Proyectos acabados con éxito", value: "4 proyectos" },
-        ],
+        title: "Distributed infrastructures",
+        stats: [],
         cta: "Ver las campañas de la convocatoria",
         background: reeiximImage.src,
-        tag: `Finalizada 24/09/25`,
-        finished: true,
     },
 ];
 ---
@@ -63,7 +53,7 @@ const calls: CallCard[] = [
             <div class="flex flex-col gap-6 lg:flex-row lg:justify-between">
                 <!-- What is Matchfunding -->
                 <div
-                    class="backdrop-blur-md/0 flex flex-col gap-10 rounded-2xl bg-[rgba(143,124,146,0.4)] p-10 lg:w-1/2"
+                    class="backdrop-blur-md/0 flex flex-col gap-10 rounded-2xl bg-[rgba(143,124,146,0.4)] p-10"
                 >
                     <div class="text-purple flex flex-col gap-4 text-balance">
                         <h2 class="text-purple text-4xl font-bold">
@@ -86,31 +76,6 @@ const calls: CallCard[] = [
                         >
                             {t("pages.home.matchfunding.actions.viewCalls")}
                         </a>
-                    </div>
-                </div>
-                <!-- Impact data -->
-                <div
-                    class="backdrop-blur-md/0 flex flex-col gap-10 rounded-2xl bg-[rgba(143,124,146,0.4)] p-10 lg:w-1/2"
-                >
-                    <div class="text-purple flex flex-col gap-4">
-                        <h3 class="text-purple text-4xl font-bold">
-                            {t("pages.home.matchfunding.impact.title")}
-                        </h3>
-                        <p class="text-base leading-6 text-white">
-                            {t("pages.home.matchfunding.impact.description")}
-                        </p>
-                    </div>
-                    <div class="flex flex-wrap items-start justify-between gap-8">
-                        {
-                            impact.map((item) => (
-                                <div class="flex flex-col gap-2" data-label={item.label}>
-                                    <span class="text-sm text-white">{item.label}</span>
-                                    <span class="text-4xl font-bold tracking-tight">
-                                        {item.value}
-                                    </span>
-                                </div>
-                            ))
-                        }
                     </div>
                 </div>
             </div>
