@@ -197,6 +197,14 @@ export default defineConfig({
             styles: ["normal", "italic"],
             subsets: ["latin", "latin-ext"],
         },
+        {
+            provider: fontProviders.google(),
+            name: "Boldonse",
+            cssVariable: "--font-boldonse",
+            weights: ["200 800"],
+            styles: ["normal", "italic"],
+            subsets: ["latin", "latin-ext"],
+        },
     ],
 
     vite: {

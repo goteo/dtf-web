@@ -42,6 +42,7 @@
 
     /* Declared by the `<Font>` component in Layout.astro; already carries its own fallbacks. */
     --font-body: var(--font-karla);
+    --font-title: var(--font-boldonse);
     --text-body-small: 0.875rem;
     --text-double: 2rem;
 }
@@ -87,6 +88,10 @@ body.grid {
     margin: 0 auto;
     padding: 0 calc(var(--spacing) * 10);
     width: 100%;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-title);
 }
 
 astro-island {
