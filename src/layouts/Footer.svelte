@@ -4,7 +4,6 @@
     import FooterPartnerImage from "../components/footer/FooterPartnerImage.svelte";
     import Title from "../components/library/typography/Title.svelte";
     import { t } from "../i18n/store";
-    import Logo from "../components/icons/Logo.svelte";
 </script>
 
 <footer class="text-variant1" aria-labelledby="footer-heading">
@@ -112,7 +111,7 @@
                     </nav>
 
                     <!-- Logo -->
-                    <div class="flex justify-center lg:justify-end gap-6">
+                    <div class="flex justify-center gap-6 lg:justify-end">
                         <div class="h-16 w-56">
                             <img
                                 src="/images/brand/democratictech_fund_logo-pink.svg"
