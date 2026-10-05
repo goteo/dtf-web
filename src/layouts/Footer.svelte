@@ -113,8 +113,13 @@
 
                     <!-- Logo -->
                     <div class="flex justify-center lg:justify-end gap-6">
-                        <div class="h-8 w-28 sm:h-10 sm:w-36">
-                            <Logo class="h-12" />
+                        <div class="h-16 w-56">
+                            <img
+                                src="/images/brand/democratictech_fund_logo-pink.svg"
+                                alt={config.brand.logo.alt}
+                                class="h-full w-full object-contain"
+                                loading="lazy"
+                            />
                         </div>
                         <div class="h-8 w-28 sm:h-10 sm:w-36">
                             <img
