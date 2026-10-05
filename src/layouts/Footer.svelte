@@ -4,6 +4,7 @@
     import FooterPartnerImage from "../components/footer/FooterPartnerImage.svelte";
     import Title from "../components/library/typography/Title.svelte";
     import { t } from "../i18n/store";
+    import Logo from "../components/icons/Logo.svelte";
 </script>
 
 <footer class="text-variant1" aria-labelledby="footer-heading">
@@ -111,7 +112,10 @@
                     </nav>
 
                     <!-- Logo -->
-                    <div class="flex justify-center lg:justify-end">
+                    <div class="flex justify-center lg:justify-end gap-6">
+                        <div class="h-8 w-28 sm:h-10 sm:w-36">
+                            <Logo class="h-12" />
+                        </div>
                         <div class="h-8 w-28 sm:h-10 sm:w-36">
                             <img
                                 src={config.brand.logo.src}

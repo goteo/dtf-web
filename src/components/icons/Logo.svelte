@@ -1,4 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="260" height="110" viewBox="0 0 260 110">
+<script lang="ts">
+    import { twMerge, type ClassNameValue } from "tailwind-merge";
+
+    let { class: classes }: { class?: ClassNameValue } = $props();
+</script>
+
+<svg xmlns="http://www.w3.org/2000/svg" class={twMerge("w-60 h-30", classes)} viewBox="0 0 260 110">
     <g class="fill-content">
         <g stroke="#FF4D9A" stroke-width="12" stroke-linecap="round">
             <line x1="34" y1="20" x2="34" y2="76" />
