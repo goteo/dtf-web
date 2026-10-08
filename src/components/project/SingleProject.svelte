@@ -9,14 +9,15 @@
     import TopRewards from "./TopRewards.svelte";
     import { languagesList } from "../../i18n/locales";
     import { locale, setLocale, t } from "../../i18n/store";
+    import { escapeHTML } from "../../i18n/utils";
     import {
         type Project,
         type Accounting,
         apiProjectsIdOrSlugGet,
         type User,
-        type ProjectCalendar,
         type AccountingBalancePoint,
     } from "../../openapi/client/index";
+    import { getCurrentDeadline } from "../../utils/campaign";
     import { getLanguageDisplayName } from "../../utils/lang";
     import LanguagesDropdown from "../header/LanguagesDropdown.svelte";
     import RememberIcon from "../icons/actions/RememberIcon.svelte";
@@ -43,26 +44,6 @@
     } = $props();
 
     const projectDeadline = $derived(getCurrentDeadline(project.calendar!));
-
-    function getCurrentDeadline(calendar: ProjectCalendar) {
-        const now = new Date();
-
-        const minimum = new Date(calendar.minimum!);
-        if (now < minimum) {
-            return minimum;
-        }
-
-        if (!calendar.optimum) {
-            return undefined;
-        }
-
-        const optimum = new Date(calendar.optimum);
-        if (now < optimum) {
-            return optimum;
-        }
-
-        return undefined;
-    }
 
     // Seeds the initial pick; the language selector owns it from then on.
     let projectLanguage = $state(untrack(() => guessProjectLanguage(project.locales!)));
@@ -155,7 +136,7 @@
                     <Thtml
                         key="pages.project.view.owner"
                         vars={{
-                            owner: `<span class="font-bold text-black underline">${owner.displayName}</span>`,
+                            owner: `<a href="/user/${escapeHTML(owner.handle)}" class="font-bold text-black underline">${escapeHTML(owner.displayName ?? "")}</a>`,
                         }}
                     />
                 </p>
@@ -192,7 +173,10 @@
                 src={project.video?.src || ""}
                 title={project.title || ""}
                 thumbnails={project.video?.thumbnail || ""}
-                poster={{ src: project.video?.cover || "", alt: "" }}
+                poster={{
+                    src: project.cover || project.video?.cover || "",
+                    alt: project.title || "",
+                }}
             />
         </div>
         <div class="flex h-auto w-full flex-col gap-4 lg:h-full lg:w-[30%]">

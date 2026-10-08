@@ -9,7 +9,21 @@ export const ACL: ControlItem[] = [
         roles: ["ROLE_USER"],
     },
     {
+        path: "/project/.*/manage",
+        roles: ["ROLE_USER"],
+    },
+    {
+        path: "/reviews",
+        roles: ["ROLE_USER", "ROLE_ADMIN"],
+    },
+    {
         path: "/admin",
         roles: ["ROLE_ADMIN"],
     },
 ];
+
+/**
+ * Paths that can trust the session stored in the cookie, skipping the User re-fetch
+ * from the API. Every other path gets the User's current roles on each request.
+ */
+export const CACHED_SESSION_PATHS: string[] = ["/api/relay"];
