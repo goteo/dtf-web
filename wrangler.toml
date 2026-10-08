@@ -2,13 +2,6 @@ name = "dtfcrowd-app"
 main = "@astrojs/cloudflare/entrypoints/server"
 compatibility_date = "2025-06-26"
 compatibility_flags = ["nodejs_compat"]
-workers_dev = false
-keep_vars = true
-
-
-# ============================================================================
-# LOCAL DEVELOPMENT
-# ============================================================================
 
 [[d1_databases]]
 binding = "DB"
@@ -16,11 +9,9 @@ database_name = "dtfcrowd-db"
 database_id = "6c3e6748-7e5c-450d-9565-d24739442341"
 migrations_dir = "db/migrations"
 
-
 [assets]
 binding = "ASSETS"
 directory = "./dist"
-
 
 [observability.logs]
 enabled = true
