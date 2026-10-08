@@ -161,7 +161,7 @@ Converted from CampaignCard.astro to maintain exact functionality
                 {/if}
             </div>
 
-            <div class="flex flex-col gap-4">
+            <div class="flex flex-col gap-4 p-4">
                 <Title
                     level={3}
                     variant="subsection"

@@ -61,7 +61,7 @@ const campaigns = await Promise.all(
             size: sizeMap[index] ?? "small",
             slug: project.slug!,
             title: project.title!,
-            image: project.video?.thumbnail! || project.cover!,
+            image: project.cover || project.video?.thumbnail || "",
             minimum: project.budget?.minimum?.money!,
             obtained: accounting!.balance as Money,
             optimum: project.budget?.optimum?.money,
