@@ -1,5 +1,5 @@
 import { createBanner, deleteBanner } from "./banners";
-import { createHomeHero, deleteHomeHero } from "./hero";
+import { createHomeHero, deleteHomeHero, getHomeHeroData, updateHomeHero } from "./hero";
 import { deleteHighlights, saveHighlights } from "./highlights";
 import { payment } from "./payment";
 import { updatePersonalProfile } from "./personalProfile";
@@ -18,6 +18,8 @@ export const server = {
     deleteBanner,
     createHomeHero,
     deleteHomeHero,
+    getHomeHeroData,
+    updateHomeHero,
     saveHighlights,
     deleteHighlights,
     updatePublicProfile,
