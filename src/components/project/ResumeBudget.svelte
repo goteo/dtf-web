@@ -16,7 +16,7 @@
         {$t("pages.project.view.tabs.budget.chartTitle")}
     </div>
 
-    <div class="flex basis-7/12 flex-col gap-10 rounded-3xl bg-[#efeeff] px-6 pt-10 pb-6 shadow-sm">
+    <div class="flex basis-7/12 flex-col gap-10 rounded-3xl bg-white px-6 pt-10 pb-6 shadow-sm">
         <BudgetBar {project} {accounting} />
         <LegendBudgetBar {project} />
     </div>
