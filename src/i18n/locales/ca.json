@@ -1070,8 +1070,8 @@
             },
             "anonymous": {
               "length": "aportacions",
-              "title": "Donacions anònimes",
-              "description": "No totes les persones heroiques porten capa ni tampoc senten la necessitat de mostrar la seva identitat."
+              "title": "Usuaris de Goteo.org",
+              "description": ""
             },
             "loadMore": "Veure més"
           }
