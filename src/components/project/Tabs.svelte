@@ -95,8 +95,8 @@
                 aria-selected={activeTab === tab.id}
                 aria-controls={`tab-${tab.id}`}
                 id={`tab-button-${tab.id}`}
-                class="text-secondary lg:border-variant1 inline-flex shrink-0 items-center rounded-t-lg px-6 py-2 font-bold whitespace-nowrap transition-colors duration-100 ease-in-out lg:border-t lg:border-r lg:border-l"
-                class:bg-variant1={activeTab === tab.id}
+                class="text-secondary lg:border-purple-soft inline-flex shrink-0 items-center rounded-t-lg px-6 py-2 font-bold whitespace-nowrap transition-colors duration-100 ease-in-out lg:border-t lg:border-r lg:border-l"
+                class:bg-purple-soft={activeTab === tab.id}
                 onclick={() => selectTab(tab.id)}
             >
                 {tab.label}
@@ -106,14 +106,14 @@
 
     <button
         onclick={() => scrollTabs("right")}
-        class="bg-variant1 absolute top-5 right-0 z-10 h-8 w-8 -translate-y-1/2 rounded-l-sm p-2 shadow-md lg:hidden"
+        class="bg-purple-soft absolute top-5 right-0 z-10 h-8 w-8 -translate-y-1/2 rounded-l-sm p-2 shadow-md lg:hidden"
         class:opacity-50={!canScrollRight}
         class:pointer-events-none={!canScrollRight}
         aria-label="Scroll tabs right"
     >
         <ArrowSliderIcon direction="right" />
     </button>
-    <div class="bg-variant1 flex w-full justify-center py-10 lg:py-20">
+    <div class="bg-purple-soft flex w-full justify-center py-10 lg:py-20">
         <div class="wrapper flex items-center justify-center">
             {#if activeTab === "rewards"}
                 <div
