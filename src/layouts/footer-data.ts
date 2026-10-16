@@ -8,6 +8,7 @@ export const FOOTER_DATA: FooterConfig = {
         { src: "/images/partners/FKI.svg", alt: "Free Knowledge Institute" },
         { src: "/images/partners/COMMONSNETWORK.jpeg", alt: "Commons Network" },
         { src: "/images/partners/OPENTECH.png", alt: "OpenTech AUC" },
+        { src: "/images/partners/NEWSMAST.svg", alt: "Newsmast Foundation" },
     ],
     partOf: [],
     navColumns: [
