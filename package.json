@@ -14,6 +14,7 @@
     "check:svelte": "svelte-check --tsconfig ./tsconfig.json",
     "check:types": "pnpm check:astro && pnpm check:svelte",
     "db:migrate": "wrangler d1 migrations apply dtfcrowd-db --local",
+    "db:rebuild": "wrangler d1 execute dtfcrowd-db --local --command=\"DELETE FROM d1_migrations\" && wrangler d1 migrations apply dtfcrowd-db --local",
     "db:seed": "wrangler d1 execute dtfcrowd-db --local --file=./db/seed.sql",
     "dev": "astro dev",
     "format": "NODE_OPTIONS=\"--max-old-space-size=4096\" eslint --fix . && prettier --write .",

@@ -252,6 +252,7 @@ export default defineConfig({
             include: [
                 "@astrojs/cloudflare/cache/provider",
                 "@astrojs/svelte/server.js",
+                "astro/actions/runtime/entrypoints/client.js",
                 "astro/actions/runtime/entrypoints/route.js",
                 "astro/app/manifest",
                 "astro/assets/services/noop",
@@ -266,6 +267,13 @@ export default defineConfig({
                 "dinero.js/currencies",
                 "flowbite-svelte",
                 "tailwind-merge",
+                /**
+                 * Loaded with a dynamic import() by `loadMarkdown()` in src/utils/richText.ts.
+                 * Vite rewrites the import to a prebundled path but never builds it, so the
+                 * request 404s and every `format="markdown"` RichTextEditor stays empty.
+                 */
+                "@tiptap/static-renderer/pm/markdown",
+                "marked",
             ],
             exclude: [
                 /**
