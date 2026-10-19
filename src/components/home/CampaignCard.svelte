@@ -165,8 +165,7 @@ Converted from CampaignCard.astro to maintain exact functionality
                 <Title
                     level={3}
                     variant="subsection"
-                    color="secondary"
-                    class="line-clamp-2 h-16 leading-8"
+                    class="text-primary line-clamp-2 h-16 leading-8"
                 >
                     {campaign.title}
                 </Title>
