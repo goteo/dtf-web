@@ -1717,7 +1717,9 @@ export type ProjectProjectCreationDto = {
     /**
      * List of Categories.
      */
-    categories: Array<string>;
+    categories: [
+        string
+    ];
     /**
      * List of Themes.
      */
@@ -1748,7 +1750,9 @@ export type ProjectProjectCreationDtoJsonld = {
     /**
      * List of Categories.
      */
-    categories: Array<string>;
+    categories: [
+        string
+    ];
     /**
      * List of Themes.
      */

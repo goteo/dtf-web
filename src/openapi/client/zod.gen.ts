@@ -1154,8 +1154,8 @@ export const zMatchCall = z.object({
 export const zProjectProjectCreationDto = z.object({
     title: z.string().min(3).regex(/^(.*[a-zA-Z]{1,}.*)$/),
     subtitle: z.string(),
-    categories: z.array(z.string()).min(1).max(2),
-    themes: z.array(z.string()).max(1).optional(),
+    categories: z.tuple([z.string()]),
+    themes: z.array(z.string()).min(1).max(2).optional(),
     territory: zTerritory,
     calendar: zProjectCalendar,
     status: z.enum([
@@ -1284,8 +1284,8 @@ export const zMatchCallJsonld = z.object({
 export const zProjectProjectCreationDtoJsonld = z.object({
     title: z.string().min(3).regex(/^(.*[a-zA-Z]{1,}.*)$/),
     subtitle: z.string(),
-    categories: z.array(z.string()).min(1).max(2),
-    themes: z.array(z.string()).max(1).optional(),
+    categories: z.tuple([z.string()]),
+    themes: z.array(z.string()).min(1).max(2).optional(),
     territory: zTerritoryJsonld,
     calendar: zProjectCalendarJsonld,
     status: z.enum([
