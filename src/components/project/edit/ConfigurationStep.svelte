@@ -18,15 +18,18 @@
     import DateInput from "../../../components/library/inputs/DateInput.svelte";
     import { locale, t } from "../../../i18n/store";
     import { withoutCache } from "../../../openapi/cacheInterceptor";
-    import { apiCategoriesGetCollection } from "../../../openapi/client";
+    import { apiCategoriesGetCollection, apiThemesGetCollection } from "../../../openapi/client";
     import { client } from "../../../openapi/client/client.gen";
-    import { apiCategoriesIdOrSlugGetUrl } from "../../../openapi/client/operation-paths.gen";
+    import {
+        apiCategoriesIdOrSlugGetUrl,
+        apiThemesIdOrSlugGetUrl,
+    } from "../../../openapi/client/operation-paths.gen";
     import { extractId } from "../../../utils/extractId";
     import { toCollectionItems } from "../../../utils/hydra";
     import Button from "../../library/buttons/Button.svelte";
     import Title from "../../library/typography/Title.svelte";
 
-    import type { Category, Project } from "../../../openapi/client";
+    import type { Category, Project, Theme } from "../../../openapi/client";
     import type { ProjectDraftStore } from "../../../stores/drafts/draftsStore";
 
     interface ConfigurationStepProps {
@@ -69,6 +72,30 @@
             categories: selected.map((s) => {
                 return client.buildUrl({
                     url: apiCategoriesIdOrSlugGetUrl,
+                    path: { idOrSlug: s.id },
+                });
+            }),
+        });
+    }
+
+    let allThemes = $derived.by(async () => {
+        const { data } = await withoutCache(() =>
+            apiThemesGetCollection({
+                baseUrl: "/api/relay",
+                headers: { "Accept-Language": $locale },
+            }),
+        );
+
+        return toCollectionItems<Theme>(data);
+    });
+
+    let themes = $derived($draft.latest.themes.map((c) => extractId(c)!));
+
+    function handleThemeChange(selected: Theme[]) {
+        draft.patch({
+            themes: selected.map((s) => {
+                return client.buildUrl({
+                    url: apiThemesIdOrSlugGetUrl,
                     path: { idOrSlug: s.id },
                 });
             }),
@@ -145,6 +172,25 @@
             <div class="space-y-4">
                 <div class="space-y-4">
                     <Title level={2} variant="subsection">
+                        {$t("Choose a shelf")}
+                    </Title>
+                </div>
+                <CategorySelect
+                    max={2}
+                    {options}
+                    bind:selectedIds={categories}
+                    onChange={handleCategoryChange}
+                />
+            </div>
+        {/if}
+    {/await}
+
+    <!-- Categories Section -->
+    {#await allThemes then options}
+        {#if options.length > 0}
+            <div class="space-y-4">
+                <div class="space-y-4">
+                    <Title level={2} variant="subsection">
                         {$t("pages.project.create.categories.title")}
                     </Title>
                     <p class="text-black transition-all duration-300 ease-in-out">
@@ -154,8 +200,8 @@
                 <CategorySelect
                     max={2}
                     {options}
-                    bind:selectedIds={categories}
-                    onChange={handleCategoryChange}
+                    bind:selectedIds={themes}
+                    onChange={handleThemeChange}
                 />
             </div>
         {/if}

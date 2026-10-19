@@ -8,6 +8,8 @@
         type Territory,
         apiCategoriesIdOrSlugGetUrl,
         apiProjectsPost,
+        type Theme,
+        apiThemesIdOrSlugGetUrl,
     } from "../../openapi/client";
     import { client } from "../../openapi/client/client.gen";
     import { CAMPAIGN_MAX_END_DATE, CAMPAIGN_MIN_START_DATE } from "../../utils/dates";
@@ -27,12 +29,13 @@
 
     import type z from "zod";
 
-    let { categories }: { categories: Category[] } = $props();
+    let { categories, themes }: { categories: Category[]; themes: Theme[] } = $props();
 
     let form: Partial<ApiProjectsPostData["body"]> = $state({
         title: "",
         subtitle: "",
-        categories: [],
+        categories: [""],
+        themes: [],
         calendar: {
             release: CAMPAIGN_MIN_START_DATE.toISOString(),
         },
@@ -87,14 +90,27 @@
     }
 
     function handleCategories(categories: Category[]) {
-        form.categories = categories.map((c) => {
-            return client.buildUrl({
+        const category = categories[0];
+
+        form.categories = [
+            client.buildUrl({
                 url: apiCategoriesIdOrSlugGetUrl,
-                path: { idOrSlug: String(c.id) },
+                path: { idOrSlug: String(category.id) },
+            }),
+        ];
+
+        validate("categories");
+    }
+
+    function handleThemes(themes: Theme[]) {
+        form.themes = themes.map((t) => {
+            return client.buildUrl({
+                url: apiThemesIdOrSlugGetUrl,
+                path: { idOrSlug: String(t.id) },
             });
         });
 
-        validate("categories");
+        validate("themes");
     }
 
     function handleTerritory(territory: Territory) {
@@ -180,6 +196,10 @@
         </div>
         <div class="flex flex-col gap-4">
             <Title level={2} variant="subsection">
+                {$t("Choose a shelf")}
+            </Title>
+            <CategorySelect max={2} options={categories} onChange={handleCategories} />
+            <Title level={2} variant="subsection">
                 {$t("pages.project.create.categories.title")}
             </Title>
             <p
@@ -194,7 +214,7 @@
                     {$t("pages.project.create.categories.subtitle")}
                 {/if}
             </p>
-            <CategorySelect max={2} options={categories} onChange={handleCategories} />
+            <CategorySelect max={2} options={themes} onChange={handleThemes} />
         </div>
         <div class="flex flex-col gap-4">
             <Title level={2} variant="subsection">

@@ -2,9 +2,9 @@
 import Layout from "../../../layouts/Layout.astro";
 import App from "../../../layouts/App.svelte";
 import CreateProjectForm from "../../../components/create/CreateProjectForm.svelte";
-import { apiCategoriesGetCollection } from "../../../openapi/client";
+import { apiCategoriesGetCollection, apiThemesGetCollection } from "../../../openapi/client";
 import { toCollectionItems } from "../../../utils/hydra";
-import type { Category } from "../../../openapi/client";
+import type { Category, Theme } from "../../../openapi/client";
 import { goto } from "../../../utils/navigation";
 import { withoutCache } from "../../../openapi/cacheInterceptor";
 
@@ -20,10 +20,17 @@ const { data: categoriesRaw } = await withoutCache(() =>
     }),
 );
 const categories = toCollectionItems<Category>(categoriesRaw);
+
+const { data: themesRaw } = await withoutCache(() =>
+    apiThemesGetCollection({
+        headers: { "Accept-Language": langs },
+    }),
+);
+const themes = toCollectionItems<Theme>(themesRaw);
 ---
 
 <Layout title={t("pages.project.create.title")}>
     <App client:load locale={lang} session={session}>
-        <CreateProjectForm client:load {categories} />
+        <CreateProjectForm client:load {categories} {themes} />
     </App>
 </Layout>
