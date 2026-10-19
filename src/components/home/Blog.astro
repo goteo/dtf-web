@@ -19,19 +19,19 @@ const cover = post.headerMedia.find((media) => media.type.startsWith("image/"));
         <div class="flex flex-col gap-6 p-10 lg:min-h-0 lg:flex-1">
             <!-- Main Content -->
             <div class="flex flex-col gap-2">
-                <h2 class="text-secondary text-4xl leading-12 font-bold">
+                <h2 class="text-primary text-4xl leading-12 font-bold">
                     {post.title}
                 </h2>
-                {post.subtitle && <p class="text-secondary text-base leading-6">{post.subtitle}</p>}
+                {post.subtitle && <p class="text-content text-base leading-6">{post.subtitle}</p>}
             </div>
 
             <!-- Button -->
             <div class="flex">
                 <a
                     href={`/${lang}/blog/${post.id}`}
-                    class="group border-secondary hover:bg-secondary flex items-center justify-center gap-2 rounded-3xl border px-6 py-4 transition-all duration-200"
+                    class="group border-primary hover:bg-primary flex items-center justify-center gap-2 rounded-3xl border px-6 py-4 transition-all duration-200"
                 >
-                    <span class="text-content text-base font-bold group-hover:text-white">
+                    <span class="text-black text-base font-bold group-hover:text-white">
                         {t("pages.home.blog.readMore")}
                     </span>
                 </a>
