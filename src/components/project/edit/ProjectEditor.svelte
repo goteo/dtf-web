@@ -55,7 +55,7 @@
         { id: "3", label: $t("pages.project.edit.tabs.rewards") },
         { id: "4", label: $t("pages.project.edit.tabs.collaborations") },
         { id: "5", label: $t("pages.project.edit.tabs.budget") },
-        { id: "6", label: $t("pages.project.edit.tabs.aboutYou") },
+        // { id: "6", label: $t("pages.project.edit.tabs.aboutYou") },
     ]);
 
     let errorMessage: string | undefined = $state();
