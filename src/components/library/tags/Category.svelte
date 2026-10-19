@@ -5,7 +5,7 @@
 
     const styles = {
         default: "inset-ring-1 hover:inset-ring-0 inset-ring-secondary bg-white text-secondary",
-        active: "bg-secondary text-primary hover:text-secondary",
+        active: "bg-secondary text-white hover:text-secondary",
         ghost: "",
     };
 
