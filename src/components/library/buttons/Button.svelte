@@ -11,7 +11,7 @@
 
     const kindStyles = {
         primary: "bg-primary",
-        secondary: "bg-variant1",
+        secondary: "bg-variant1 text-content",
         ghost: "inset-ring-1 inset-ring-secondary",
         invert: "",
     };

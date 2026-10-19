@@ -138,7 +138,7 @@
                     onSelect={onLangChange}
                 />
                 <Button
-                    class="whitespace-nowrap"
+                    class="whitespace-nowrap text-content"
                     kind="ghost"
                     size="md"
                     onclick={() => (previewOpen = true)}
@@ -148,7 +148,7 @@
                 </Button>
                 <div class="relative">
                     <ActionableButton
-                        kind="secondary"
+                        kind="primary"
                         size="md"
                         class="disabled:pointer-events-none"
                         action={handleSave}
@@ -167,8 +167,8 @@
                     {/if}
                 </div>
                 <Button
-                    class="disabled:pointer-events-none disabled:opacity-24"
-                    kind="primary"
+                    class="disabled:pointer-events-none disabled:opacity-24 text-content"
+                    kind="secondary"
                     size="md"
                     onclick={() => {}}
                 >
