@@ -3,11 +3,11 @@ import type { Project } from "../openapi/client/index.ts";
 /**
  * Public project statuses for the public search page.
  *
- * A project has many internal `status` values across its lifecycle. Only three
+ * A project has many internal `status` values across its lifecycle. Only four
  * grouped public statuses are exposed to public search. The UI multiselect works
  * with these public statuses; the API receives the expanded `status[]` list.
  */
-export type ProjectPublicStatus = "in_campaign" | "funded" | "archived";
+export type ProjectPublicStatus = "to_campaign" | "in_campaign" | "funded" | "archived";
 
 /**
  * Maps each public status (UI selection) to the real project `status` values it
@@ -15,6 +15,7 @@ export type ProjectPublicStatus = "in_campaign" | "funded" | "archived";
  * archived.
  */
 export const PUBLIC_STATUSES_TO_STATUSES: Record<ProjectPublicStatus, string[]> = {
+    to_campaign: ["to_campaign"],
     in_campaign: ["in_campaign"],
     funded: [
         "to_funding_review",
@@ -28,7 +29,12 @@ export const PUBLIC_STATUSES_TO_STATUSES: Record<ProjectPublicStatus, string[]> 
     archived: ["campaign.failed"],
 };
 
-export const ALL_PUBLIC_STATUSES: ProjectPublicStatus[] = ["in_campaign", "funded", "archived"];
+export const ALL_PUBLIC_STATUSES: ProjectPublicStatus[] = [
+    "to_campaign",
+    "in_campaign",
+    "funded",
+    "archived",
+];
 
 const PUBLIC_API_STATUSES = new Set(Object.values(PUBLIC_STATUSES_TO_STATUSES).flat());
 
