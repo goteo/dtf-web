@@ -265,6 +265,7 @@ export default defineConfig({
                 "dexie",
                 "dinero.js",
                 "dinero.js/currencies",
+                "flickity",
                 "flowbite-svelte",
                 "tailwind-merge",
                 /**

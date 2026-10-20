@@ -5,7 +5,7 @@
 </script>
 
 <img
-    class={twMerge("h-20", classes)}
-    src="/images/brand/DTFcrowd_exact_artwork_transparent.png"
+    class={twMerge("w-56", classes)}
+    src="/images/brand/DTFcrowd_orange_red.svg"
     alt="DTFcrowd by Goteo"
 />
