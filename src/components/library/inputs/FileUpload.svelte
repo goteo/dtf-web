@@ -334,7 +334,13 @@
     </div>
 
     {#if error || helperText}
-        <p class={twJoin("ml-4 text-xs", error && "text-tertiary", helperText && "text-gray-500")}>
+        <p
+            class={twJoin(
+                "ml-4 text-xs",
+                error && "text-tertiary",
+                helperText && "text-content/70",
+            )}
+        >
             {error || helperText}
         </p>
     {/if}

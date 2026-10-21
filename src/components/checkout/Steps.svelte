@@ -35,7 +35,7 @@
         </div>
     </div>
 
-    <div class="mt-4 flex w-full items-center justify-between text-sm font-bold text-gray-700">
+    <div class="mt-4 flex w-full items-center justify-between text-sm font-bold text-content">
         {#each stepsLabels as label, index}
             <div
                 class={`flex max-w-20 items-center gap-1 text-center ${

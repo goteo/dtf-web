@@ -12,8 +12,8 @@
     const kindStyles = {
         primary: "bg-primary",
         secondary: "bg-variant1 text-content",
-        ghost: "inset-ring-1 inset-ring-secondary",
-        invert: "",
+        ghost: "inset-ring-1 inset-ring-secondary text-content",
+        invert: "text-content",
     };
 
     interface Props extends Omit<HTMLButtonAttributes, "class"> {
@@ -40,7 +40,7 @@
 
     const buttonClass = $derived(
         twMerge(
-            "text-white disabled:bg-grey flex w-auto items-center justify-center gap-2 font-bold transition hover:cursor-pointer",
+            "text-white disabled:bg-grey disabled:text-content/60 disabled:cursor-not-allowed flex w-auto items-center justify-center gap-2 font-bold transition hover:cursor-pointer",
             sizeStyles[size],
             kindStyles[kind],
             href && "hover:underline",
