@@ -6,6 +6,7 @@
     import HeaderButtons from "../components/header/HeaderButtons.svelte";
     import UiLanguages from "../components/header/UiLanguages.svelte";
     import Logo from "../components/icons/Logo.svelte";
+    import Hamburger from "../components/icons/navigation/Hamburger.svelte";
     import UserIcon from "../components/icons/user/User.svelte";
     import { t } from "../i18n/store";
     import { cartCount } from "../stores/checkoutsStore";
@@ -56,7 +57,9 @@
                     id="header-main"
                 >
                     <div class="flex items-center gap-2 md:gap-4">
-                        <a href="/" class="shrink-0"><Logo /></a>
+                        <a href="/" class="shrink-0"
+                            ><Logo class="h-20 w-40 sm:h-24 sm:w-48 lg:h-30 lg:w-60" /></a
+                        >
                     </div>
                     <nav>
                         <ul class="flex items-center gap-1 md:gap-4">
@@ -82,7 +85,7 @@
                                             {:else}
                                                 <UserIcon class="size-8" />
                                             {/if}
-                                            <span class="hidden sm:inline">
+                                            <span class="hidden md:inline">
                                                 {$t("common.greeting")}, {$session.user.displayName}
                                             </span>
                                         </button>
@@ -115,16 +118,64 @@
                                         </div>
                                     </div>
                                 {:else}
-                                    <a href="/login" class="flex w-full items-center gap-1">
-                                        <UserIcon class="size-8" />
-                                        <span class="hidden sm:inline">{$t("common.login")}</span>
-                                    </a>
+                                    <div class="relative inline-block w-full">
+                                        <button
+                                            type="button"
+                                            onclick={userDropdownToggle}
+                                            use:clickOutside={userDropdownClose}
+                                            class="flex w-full cursor-pointer items-center gap-1"
+                                            aria-haspopup="menu"
+                                            aria-expanded={userDropdownOpen}
+                                        >
+                                            <UserIcon class="size-8" />
+                                            <span class="hidden md:inline">
+                                                {$t("common.login")}
+                                            </span>
+                                        </button>
+
+                                        <div
+                                            class="absolute top-full right-0 mt-2 w-full min-w-40 flex-col rounded-lg bg-white p-2 shadow-lg"
+                                            class:hidden={!userDropdownOpen}
+                                            class:flex={userDropdownOpen}
+                                            role="menu"
+                                        >
+                                            <a
+                                                href="/login"
+                                                class="border-grey text-secondary hover:bg-grey block w-full overflow-hidden border-b px-4 py-2 font-bold whitespace-nowrap"
+                                                role="menuitem"
+                                            >
+                                                {$t("common.login")}
+                                            </a>
+                                            <a
+                                                href="/register"
+                                                class="text-secondary hover:bg-grey block w-full cursor-pointer overflow-hidden rounded-b-lg px-4 py-2 font-bold whitespace-nowrap"
+                                                role="menuitem"
+                                            >
+                                                {$t("common.register")}
+                                            </a>
+                                        </div>
+                                    </div>
                                 {/if}
                             </li>
                             <li class="hidden items-center pr-2 md:flex">
                                 <UiLanguages />
                             </li>
-                            <div class="hidden sm:block">
+                            <li class="flex items-center md:hidden">
+                                <button
+                                    type="button"
+                                    class="cursor-pointer p-1"
+                                    onclick={menuToggle}
+                                    aria-label={menuOpen ? $t("common.close") : $t("common.menu")}
+                                    aria-expanded={menuOpen}
+                                >
+                                    <Hamburger
+                                        close={menuOpen}
+                                        class="text-primary"
+                                        barClass="fill-secondary"
+                                    />
+                                </button>
+                            </li>
+                            <div class="hidden md:block">
                                 <HeaderButtons />
                             </div>
                         </ul>
@@ -140,7 +191,7 @@
                     : 'grid-rows-[0fr]'}"
             >
                 <div class="overflow-hidden">
-                    <div class="flex flex-col gap-4 p-4 sm:hidden">
+                    <div class="flex flex-col gap-4 p-4 md:hidden">
                         <HeaderButtons />
                         <UiLanguages />
                     </div>

@@ -138,7 +138,7 @@
                     onSelect={onLangChange}
                 />
                 <Button
-                    class="whitespace-nowrap text-content"
+                    class="text-content whitespace-nowrap"
                     kind="ghost"
                     size="md"
                     onclick={() => (previewOpen = true)}
@@ -167,7 +167,7 @@
                     {/if}
                 </div>
                 <Button
-                    class="disabled:pointer-events-none disabled:opacity-24 text-content"
+                    class="text-content disabled:pointer-events-none disabled:opacity-24"
                     kind="secondary"
                     size="md"
                     onclick={() => {}}
