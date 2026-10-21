@@ -12,11 +12,16 @@
     }
 </script>
 
-<div class="flex gap-2">
-    <Button size="md" kind="ghost" onclick={openSearch} class="inset-0 border-none inset-ring-0">
+<div class="flex items-center gap-2">
+    <Button
+        size="md"
+        kind="ghost"
+        onclick={openSearch}
+        class="inset-0 border-none pl-0 inset-ring-0"
+    >
         <SearchIcon width="32" height="32" class="text-content" />
     </Button>
-    <Button size="md" kind="primary" onclick={goToCreateProject}>
+    <Button size="sm" kind="primary" onclick={goToCreateProject} class="h-10 rounded-lg">
         {$t("common.header.createProject")}
     </Button>
 </div>
