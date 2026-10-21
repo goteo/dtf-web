@@ -6,13 +6,13 @@
     import { t } from "../i18n/store";
 </script>
 
-<footer class="text-variant1" aria-labelledby="footer-heading">
+<footer class="bg-purple-soft text-variant1" aria-labelledby="footer-heading">
     <h2 id="footer-heading" class="sr-only">{$t("common.footer.a11y.footerHeading")}</h2>
 
     <!-- Funding Partners Section -->
     {#if config.funding.length > 0 || config.partOf.length > 0}
         <section
-            class="bg-purple-soft text-tertiary border-variant1 border-2 border-b-0 py-6 sm:py-8 md:py-10"
+            class="bg-purple-soft text-tertiary border-variant1 border-t-2 py-6 sm:py-8 md:py-10"
             aria-labelledby="funding-partners-heading"
         >
             <div class="wrapper">
@@ -35,7 +35,7 @@
                                 role="list"
                                 aria-label={$t("common.footer.a11y.fundingPartners")}
                             >
-                                <div class="flex items-center gap-3 sm:gap-4">
+                                <div class="flex flex-wrap items-center gap-3 sm:gap-4">
                                     {#each config.funding as partner (partner.src)}
                                         <FooterPartnerImage src={partner.src} alt={partner.alt} />
                                     {/each}
@@ -111,11 +111,11 @@
                     </nav>
 
                     <!-- Logo -->
-                    <div class="flex justify-center gap-6 lg:justify-end">
-                        <div class="h-16 w-56">
+                    <div class="flex items-center justify-center gap-6 lg:justify-end">
+                        <div class="h-16 w-56 translate-y-1.5">
                             <img
                                 src="/images/brand/democratictech_fund_logo-pink.svg"
-                                alt={config.brand.logo.alt}
+                                alt="democratic.tech.fund"
                                 class="h-full w-full object-contain"
                                 loading="lazy"
                             />
