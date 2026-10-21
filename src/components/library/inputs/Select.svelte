@@ -136,7 +136,7 @@
         )}
         aria-invalid={error ? "true" : "false"}
         aria-describedby={error ? errorId : helperText ? helperId : undefined}
-        style="-webkit-appearance: none; -moz-appearance: none; appearance: none; background-image: none;"
+        style="background-image: none;"
     >
         {@render children()}
     </select>
@@ -146,8 +146,51 @@
 
     <!-- Helper Text -->
     {#if !error && helperText}
-        <p id={helperId} class="mt-1 text-xs text-gray-500">
+        <p id={helperId} class="mt-1 text-xs text-content/70">
             {helperText}
         </p>
     {/if}
 </div>
+
+<style>
+    /*
+     * Where supported, render the option list in-page so it always opens below the field
+     * (native pickers flip upwards when there is more room above). Other browsers keep the
+     * plain native select via the `appearance-none` class.
+     */
+    @supports (appearance: base-select) {
+        select,
+        select::picker(select) {
+            appearance: base-select;
+        }
+
+        select::picker-icon {
+            display: none;
+        }
+
+        select::picker(select) {
+            position-area: bottom span-right;
+            position-try-fallbacks: none;
+            max-height: 100%;
+            margin-top: 0.25rem;
+            border: 1px solid var(--color-grey);
+            border-radius: 0.5rem;
+            background-color: var(--color-white);
+            color: var(--color-content);
+        }
+
+        select :global(option) {
+            padding: 0.5rem 1rem;
+        }
+
+        select :global(option:hover),
+        select :global(option:focus-visible),
+        select :global(option:checked) {
+            background-color: var(--color-grey);
+        }
+
+        select :global(option:disabled) {
+            opacity: 0.5;
+        }
+    }
+</style>
