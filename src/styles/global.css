@@ -48,6 +48,15 @@
 }
 
 @layer base {
+    /*
+     * flowbite-svelte's Modal scrolls its body, but its height cap is a typo (`max-h-[90hv]`),
+     * so the browser's default dialog scroll kicked in too and showed a second scrollbar.
+     */
+    dialog {
+        max-height: 100vh;
+        overflow: hidden;
+    }
+
     [data-theme="dark"] {
         --color-primary: #3d3d3d;
         --color-secondary: #94a3b8;
@@ -76,6 +85,8 @@ body {
     font-size: var(--body-regular);
     line-height: 140%;
     color: var(--color-content);
+    /* Safety net against stray horizontal scroll on tablets; clip keeps position: sticky working */
+    overflow-x: clip;
 }
 
 body.grid {
