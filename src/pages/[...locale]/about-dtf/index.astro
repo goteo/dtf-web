@@ -1,0 +1,213 @@
+---
+import App from "../../../layouts/App.svelte";
+import Layout from "../../../layouts/Layout.astro";
+import Table from "../../../components/about/Table.svelte";
+import Cell from "../../../components/about/Cell.svelte";
+
+const { t, lang } = Astro.locals;
+
+const pillars = [
+    {
+        title: "Build",
+        description: "Cooperative, open and community-governed digital infrastructure.",
+    },
+    {
+        title: "Learn",
+        description:
+            "Shared knowledge, peer learning and support for communities moving towards digital autonomy.",
+    },
+    {
+        title: "Fund",
+        description:
+            "Collective funding mechanisms that turn community priorities into viable projects.",
+    },
+    {
+        title: "Federate",
+        description:
+            "Shared infrastructure, resources and solidarity across communities, cities and borders.",
+    },
+];
+
+const pipeline = [
+    { title: "Community", description: "A community identifies a need." },
+    { title: "Project", description: "A project proposes an alternative." },
+    { title: "Crowd", description: "The crowd decides to support it." },
+    { title: "Match", description: "Funders multiply that support through match-funding." },
+    {
+        title: "Commons",
+        description: "Resources flow into infrastructure that creates collective value.",
+    },
+];
+---
+
+<Layout title="Democratic Tech Fund" description={t("pages.metadata.description")}>
+    <App client:load locale={lang} class="mb-20 gap-18">
+        <div class="flex flex-col gap-18 pb-20">
+            <!-- Hero section -->
+            <section class="py-20">
+                <div class="wrapper text-center">
+                    <div class="mx-auto max-w-3xl space-y-8">
+                        <h1 class="text-secondary text-4xl leading-tight font-bold lg:text-6xl">
+                            Democratic Tech Fund
+                        </h1>
+                        <p class="text-secondary mx-auto max-w-2xl text-lg leading-relaxed">
+                            Our digital lives run on infrastructure we don’t own. The clouds where
+                            we work, the platforms where we organise, the social networks where we
+                            speak and the tools that sustain our communities are increasingly
+                            controlled by a handful of corporations.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Why DTF -->
+            <section class="wrapper py-20">
+                <div class="max-w-3xl space-y-4">
+                    <h2 class="text-secondary text-3xl font-bold lg:text-4xl">
+                        Democratic Tech Fund (DTF) exists to change that.
+                    </h2>
+                    <p class="text-content leading-relaxed">
+                        DTF is a growing federation of cooperatives, communities and public-interest
+                        organisations building <strong>contra-infrastructure</strong>: technology,
+                        knowledge and funding that communities can own, govern and sustain together.
+                    </p>
+                    <p class="text-content leading-relaxed">
+                        We don’t need to start from zero. Alternatives already exist. DTF connects
+                        them, strengthens them and helps them travel.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Build, learn, fund, federate -->
+            <section class="wrapper py-20">
+                <h2 class="text-secondary mb-10 text-2xl font-bold lg:text-3xl">
+                    Build → Learn → Fund → Federate
+                </h2>
+                <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+                    {
+                        pillars.map((pillar, i) => (
+                            <div class="border-grey relative flex flex-col gap-4 overflow-hidden rounded-2xl border bg-white p-6 shadow-sm">
+                                <span class="text-grey pointer-events-none absolute bottom-16 left-4 text-[10.938rem] font-bold select-none">
+                                    {i + 1}
+                                </span>
+                                <h3 class="text-secondary relative z-10 text-base font-bold lg:text-lg">
+                                    {pillar.title}
+                                </h3>
+                                <p class="text-content relative z-10 text-sm leading-relaxed">
+                                    {pillar.description}
+                                </p>
+                            </div>
+                        ))
+                    }
+                </div>
+                <p class="text-content mt-10 max-w-3xl leading-relaxed">
+                    DTF is not only about replacing one piece of software with another. It is about
+                    reclaiming the infrastructures through which we <strong
+                        >live, organise, care, remember and act together</strong
+                    >.
+                </p>
+            </section>
+
+            <!-- DTF by Goteo -->
+            <section class="wrapper py-20">
+                <div class="max-w-3xl space-y-4">
+                    <h2 class="text-secondary text-3xl font-bold lg:text-4xl">DTF by Goteo</h2>
+                    <p class="text-secondary text-xl font-bold">
+                        Crowdfunding the infrastructure we want to live with.
+                    </p>
+                    <p class="text-content leading-relaxed font-bold">
+                        DTF by Goteo is the crowdfunding arm of the Democratic Tech Fund.
+                    </p>
+                    <p class="text-content leading-relaxed">
+                        Built with Fundación Platoniq and Goteo, it turns DTF’s mission into a
+                        practical funding pipeline: communities identify needs, projects emerge and
+                        are validated, citizens back them through crowdfunding, and institutions and
+                        funding partners can <strong>match the crowd</strong>.
+                    </p>
+                    <p class="text-content leading-relaxed">
+                        Instead of deciding behind closed doors what deserves funding, we use
+                        crowdfunding as a form of <strong
+                            >distributed decision-making and civic validation</strong
+                        >.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Community, project, crowd, match, commons -->
+            <section class="wrapper py-20">
+                <h2 class="text-secondary mb-10 text-2xl font-bold lg:text-3xl">
+                    Community → Project → Crowd → Match → Commons
+                </h2>
+                <div class="grid gap-6 md:grid-cols-3 lg:grid-cols-5">
+                    {
+                        pipeline.map((step, i) => (
+                            <div class="border-grey relative flex flex-col gap-4 overflow-hidden rounded-2xl border bg-white p-6 shadow-sm">
+                                <span class="text-grey pointer-events-none absolute bottom-16 left-4 text-[10.938rem] font-bold select-none">
+                                    {i + 1}
+                                </span>
+                                <h3 class="text-secondary relative z-10 text-base font-bold lg:text-lg">
+                                    {step.title}
+                                </h3>
+                                <p class="text-content relative z-10 text-sm leading-relaxed">
+                                    {step.description}
+                                </p>
+                            </div>
+                        ))
+                    }
+                </div>
+                <p class="text-content mt-10 max-w-3xl leading-relaxed">
+                    Goteo brings more than fifteen years of experience in civic crowdfunding, with <strong
+                        >over €25 million mobilised</strong
+                    >, a community of more than <strong>400,000 people</strong>, and thousands of
+                    commons-oriented initiatives supported.
+                </p>
+            </section>
+
+            <!-- From funding projects to building ecosystems -->
+            <section class="wrapper py-20">
+                <Table title="From funding projects to building ecosystems" cols={1}>
+                    <Cell title="Shelves">
+                        DTF by Goteo organises funding around thematic programmes or Shelves:
+                        curated spaces where communities, organisations and funders can gather
+                        projects around a shared challenge.
+                    </Cell>
+                    <Cell title="What a Shelf can support">
+                        Anything from community clouds and federated social media to cooperative
+                        platforms, democratic AI, collective archives and technologies that sustain
+                        life and activism.
+                    </Cell>
+                    <Cell title="Shelf Stewards">
+                        Organisations can also become Shelf Stewards: bring a community, define a
+                        challenge and contribute a funding pool. DTF and its partners can combine
+                        these resources with crowdfunding and match-funding so that every
+                        contribution helps unlock more collective investment.
+                    </Cell>
+                </Table>
+            </section>
+
+            <!-- Closing -->
+            <section class="py-20">
+                <div class="wrapper text-center">
+                    <div class="mx-auto max-w-3xl space-y-8">
+                        <h2 class="text-secondary text-3xl leading-tight font-bold lg:text-5xl">
+                            Don’t just fund another platform. Help build the digital commons we
+                            need.
+                        </h2>
+                        <p class="text-secondary text-sm font-bold tracking-wide uppercase">
+                            Join the federation · Start a shelf · Fund a project · Back a campaign
+                        </p>
+                        <p class="text-secondary text-2xl font-bold lg:text-3xl">
+                            The network is ours. Let’s take it back.
+                        </p>
+                        <a
+                            href="/create/project"
+                            class="bg-primary inline-flex items-center justify-center rounded-3xl px-8 py-4 font-bold text-white transition hover:opacity-90"
+                        >
+                            {t("pages.about.hero.cta")}
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </App>
+</Layout>
