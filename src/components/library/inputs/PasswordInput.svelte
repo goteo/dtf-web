@@ -110,7 +110,11 @@
     {#if error || helperText}
         <span
             id={error ? errorId : helperId}
-            class={twJoin("ml-4 text-xs", error && "text-tertiary", helperText && "text-gray-500")}
+            class={twJoin(
+                "ml-4 text-xs",
+                error && "text-tertiary",
+                helperText && "text-content/70",
+            )}
         >
             {error || helperText}
         </span>

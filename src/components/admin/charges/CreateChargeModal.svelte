@@ -255,7 +255,7 @@
                     <span
                         class={`flex size-7 shrink-0 items-center justify-center rounded-full text-xs font-bold transition-colors ${
                             done
-                                ? "bg-primary text-secondary"
+                                ? "bg-primary text-white"
                                 : active
                                   ? "bg-secondary text-white"
                                   : "bg-grey text-secondary"

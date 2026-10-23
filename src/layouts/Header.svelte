@@ -6,6 +6,7 @@
     import HeaderButtons from "../components/header/HeaderButtons.svelte";
     import UiLanguages from "../components/header/UiLanguages.svelte";
     import Logo from "../components/icons/Logo.svelte";
+    import Hamburger from "../components/icons/navigation/Hamburger.svelte";
     import UserIcon from "../components/icons/user/User.svelte";
     import { t } from "../i18n/store";
     import { cartCount } from "../stores/checkoutsStore";
@@ -56,7 +57,7 @@
                     id="header-main"
                 >
                     <div class="flex items-center gap-2 md:gap-4">
-                        <a href="/" class="shrink-0"><Logo /></a>
+                        <a href="/" class="shrink-0"><Logo class="w-40 sm:w-56" /></a>
                     </div>
                     <nav>
                         <ul class="flex items-center gap-1 md:gap-4">
@@ -82,7 +83,7 @@
                                             {:else}
                                                 <UserIcon class="size-8" />
                                             {/if}
-                                            <span class="hidden sm:inline">
+                                            <span class="hidden max-w-40 truncate sm:inline">
                                                 {$t("common.greeting")}, {$session.user.displayName}
                                             </span>
                                         </button>
@@ -121,12 +122,26 @@
                                     </a>
                                 {/if}
                             </li>
-                            <li class="hidden items-center pr-2 md:flex">
+                            <li class="hidden items-center pr-2 lg:flex">
                                 <UiLanguages />
                             </li>
-                            <div class="hidden sm:block">
+                            <li class="hidden lg:block">
                                 <HeaderButtons />
-                            </div>
+                            </li>
+                            <li class="flex items-center {children ? '' : 'lg:hidden'}">
+                                <button
+                                    class="cursor-pointer"
+                                    onclick={menuToggle}
+                                    aria-label={$t("common.header.menu")}
+                                    aria-expanded={menuOpen}
+                                >
+                                    <Hamburger
+                                        close={menuOpen}
+                                        class="text-primary"
+                                        barClass="fill-white"
+                                    />
+                                </button>
+                            </li>
                         </ul>
                     </nav>
                 </div>
@@ -140,9 +155,11 @@
                     : 'grid-rows-[0fr]'}"
             >
                 <div class="overflow-hidden">
-                    <div class="flex flex-col gap-4 p-4 sm:hidden">
-                        <HeaderButtons />
+                    <div
+                        class="mx-2 flex flex-wrap items-center justify-between gap-4 py-4 md:mx-6 lg:hidden"
+                    >
                         <UiLanguages />
+                        <HeaderButtons />
                     </div>
                     {@render children?.()}
                 </div>

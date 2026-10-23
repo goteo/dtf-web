@@ -12,8 +12,11 @@
         children?: Snippet;
     }
 
+    // $props.id() rather than crypto.randomUUID(): the latter only exists on HTTPS/localhost
+    const generatedId = $props.id();
+
     let {
-        id = crypto.randomUUID(),
+        id = generatedId,
         checked = $bindable(false),
         label,
         class: classes,
@@ -36,7 +39,7 @@
         >
             <path
                 d="M1 5L4.5 8.5L11 1"
-                stroke="var(--color-secondary)"
+                stroke="var(--color-white)"
                 stroke-width="2"
                 stroke-linecap="round"
                 stroke-linejoin="round"

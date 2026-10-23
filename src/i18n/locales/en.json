@@ -386,6 +386,7 @@
     },
     "header": {
       "search": "Search",
+      "menu": "Menu",
       "createProject": "Create your project",
       "goToProfile": "Go to Profile",
       "admin": "Admin"

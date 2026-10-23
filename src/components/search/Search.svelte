@@ -195,10 +195,10 @@ Owns the search state and keeps it in sync with the URL query string.
     {#if isEmpty && !isLoading}
         <div class="flex flex-col items-center py-12 text-center" data-testid="search-empty">
             <SearchIcon class="mb-4 h-16 w-16 text-gray-400" />
-            <span class="mb-2 text-xl font-semibold text-gray-900">
+            <span class="mb-2 text-xl font-semibold text-content">
                 {$t("pages.search.empty.title")}
             </span>
-            <p class="mb-6 text-gray-600">
+            <p class="mb-6 text-content/70">
                 {$t("pages.search.empty.description")}
             </p>
             <Button onclick={clearFilters}>

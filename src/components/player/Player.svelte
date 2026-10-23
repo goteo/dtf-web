@@ -86,7 +86,7 @@
 </script>
 
 {#if isCheckingProvider}
-    <div class="flex h-full items-center justify-center rounded-lg bg-gray-100">
+    <div class="flex h-full items-center justify-center rounded-lg bg-grey">
         <Loader />
     </div>
 {:else if isPeerTube}
@@ -183,13 +183,13 @@
     <img src={previewImage} alt={poster.alt} class="h-full w-full rounded-lg object-cover" />
 {:else if noVideoSrc}
     <div
-        class="flex h-full items-center justify-center rounded-lg bg-gray-100 p-4 text-sm text-gray-600"
+        class="flex h-full items-center justify-center rounded-lg bg-grey p-4 text-sm text-content/70"
     >
         {$t("pages.project.view.video.not-found")}
     </div>
 {:else}
     <div
-        class="flex h-full items-center justify-center rounded-lg bg-gray-100 p-4 text-sm text-gray-600"
+        class="flex h-full items-center justify-center rounded-lg bg-grey p-4 text-sm text-content/70"
     >
         {$t("pages.project.view.video.not-supported")}
     </div>

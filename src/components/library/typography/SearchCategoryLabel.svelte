@@ -16,6 +16,6 @@
     let { children, class: classes = "" }: Props = $props();
 </script>
 
-<p class={twMerge("text-sm font-bold text-gray-700 uppercase", classes)}>
+<p class={twMerge("text-sm font-bold text-content uppercase", classes)}>
     {@render children()}
 </p>

@@ -183,7 +183,7 @@
         const text = highlight ? highlightMatch(entry.label, query) : entry.label;
 
         return entry.detail
-            ? `${text}<span class="mt-1 block text-xs text-gray-500 italic">${entry.detail}</span>`
+            ? `${text}<span class="mt-1 block text-xs text-content/70 italic">${entry.detail}</span>`
             : text;
     }
 
