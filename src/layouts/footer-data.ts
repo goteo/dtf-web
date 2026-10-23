@@ -20,7 +20,7 @@ export const FOOTER_DATA: FooterConfig = {
                     labelKey: "What is Goteo?",
                 },
                 {
-                    href: "/static/dtf",
+                    href: "/about-dtf",
                     labelKey: "What is DTF?",
                 },
             ],
