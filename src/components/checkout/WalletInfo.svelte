@@ -9,7 +9,7 @@
 
 <div class="flex flex-col items-center gap-4 sm:flex-row sm:items-start sm:justify-between">
     <div class="text-center sm:text-left">
-        <span class="block text-sm text-content/70"
+        <span class="text-content/70 block text-sm"
             >{$t("pages.checkout.wallet.currentBalance")}</span
         >
         <p class="text-secondary text-double font-bold">
@@ -18,7 +18,7 @@
     </div>
 
     <div class="text-center sm:text-left">
-        <span class="block text-sm text-content/70"
+        <span class="text-content/70 block text-sm"
             >{$t("pages.checkout.wallet.amountToUse")}
         </span>
         <p id="cart-total" class="text-double font-bold text-red-500">
@@ -27,7 +27,7 @@
     </div>
 
     <div class="text-center sm:text-left">
-        <span class="block text-sm text-content/70"
+        <span class="text-content/70 block text-sm"
             >{$t("pages.checkout.wallet.remainingBalance")}
         </span>
         <p id="cart-difference" class="text-secondary text-double font-bold">

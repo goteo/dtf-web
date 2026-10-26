@@ -150,7 +150,7 @@
 
     <!-- Helper Text -->
     {#if !error && helperText}
-        <p id={helperId} class="ml-4 text-xs text-content/70">
+        <p id={helperId} class="text-content/70 ml-4 text-xs">
             {helperText}
         </p>
     {/if}

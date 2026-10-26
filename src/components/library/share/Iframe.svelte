@@ -69,7 +69,7 @@
     </div>
 
     <button
-        class="bg-primary text-white h-auto w-full cursor-pointer rounded-3xl px-6 py-4 font-bold"
+        class="bg-primary h-auto w-full cursor-pointer rounded-3xl px-6 py-4 font-bold text-white"
         class:bg-primary={!copied}
         class:bg-variant1={copied}
         onclick={() => {

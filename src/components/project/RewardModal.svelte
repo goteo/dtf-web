@@ -148,7 +148,7 @@
         <div class="flex min-h-0 flex-1 flex-col gap-6 overflow-hidden md:hidden">
             {@render cover("h-64 w-full rounded-2xl object-cover")}
             {@render titles()}
-            <div class="min-h-0 flex-1 overflow-y-auto pr-2 text-content">
+            <div class="text-content min-h-0 flex-1 overflow-y-auto pr-2">
                 {@render description()}
             </div>
             {@render donationInput()}
@@ -161,7 +161,7 @@
                     {@render cover("aspect-square size-60 rounded-3xl object-cover")}
                     {@render stats()}
                 </aside>
-                <div class="min-h-0 flex-1 space-y-8 overflow-y-auto pr-2 pb-2 text-content">
+                <div class="text-content min-h-0 flex-1 space-y-8 overflow-y-auto pr-2 pb-2">
                     {@render description()}
                     {@render donationInput()}
                 </div>

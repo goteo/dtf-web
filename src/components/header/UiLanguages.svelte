@@ -33,7 +33,7 @@
 <div class="relative inline-block" use:clickOutside={() => (open = false)}>
     <button
         type="button"
-        class="flex items-center gap-1 rounded-lg border-none bg-white px-3 py-1.5 font-bold shadow-sm hover:bg-grey focus-visible:bg-grey"
+        class="hover:bg-grey focus-visible:bg-grey flex items-center gap-1 rounded-lg border-none bg-white px-3 py-1.5 font-bold shadow-sm"
         onclick={() => (open = !open)}
         aria-haspopup="listbox"
         aria-expanded={open}
@@ -47,7 +47,7 @@
     {#if open}
         <ul
             role="listbox"
-            class="absolute right-0 z-50 mt-1 min-w-full rounded-md border border-grey bg-white py-1 shadow-md"
+            class="border-grey absolute right-0 z-50 mt-1 min-w-full rounded-md border bg-white py-1 shadow-md"
         >
             {#each languages as lang (lang)}
                 <li>
@@ -55,7 +55,7 @@
                         type="button"
                         role="option"
                         aria-selected={lang === $locale}
-                        class="w-full px-3 py-2 text-left font-medium hover:bg-grey focus-visible:bg-grey {lang ===
+                        class="hover:bg-grey focus-visible:bg-grey w-full px-3 py-2 text-left font-medium {lang ===
                         $locale
                             ? 'text-secondary font-bold'
                             : ''}"
