@@ -60,9 +60,6 @@ const { data: paymentGateways } = await apiGatewaysGetCollection();
                         <div class="w-full">
                             <Steps step={3} hasError={false} client:idle />
                         </div>
-                        <div class="flex flex-col">
-                            <p class="text-content text-sm">{t("pages.checkout.summary.deduct")}</p>
-                        </div>
                     </div>
                     <div class="flex flex-col items-end">
                         <ContinueButton client:load form="payment" />

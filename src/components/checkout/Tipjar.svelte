@@ -80,7 +80,7 @@
 <div class="flex w-auto flex-col gap-4">
     <div class="flex flex-col gap-2">
         <Title level={2} variant="subsection">
-            {$t("pages.checkout.tipjar.community")}
+            {$t("I want to support the Democratich Tech Fund")}
         </Title>
 
         <CurrencyInput

@@ -35,9 +35,6 @@ if (session) {
                         <div class="w-full">
                             <Steps step={2} hasError={false} client:idle />
                         </div>
-                        <div class="flex flex-col">
-                            <p class="text-content text-sm">{t("pages.checkout.summary.deduct")}</p>
-                        </div>
                     </div>
                     <div class="flex w-full flex-col items-start">
                         <ContinueButton client:load form="register" />
