@@ -41,7 +41,7 @@
             for={finalId}
             class={twJoin(
                 "text-secondary absolute top-0 left-4 -translate-y-1/2 transform bg-white px-1 text-sm font-medium transition-all",
-                error && "text-tertiary",
+                error && "text-semantic-error",
             )}
         >
             {labelText}
@@ -68,7 +68,7 @@
             id={`helper-${finalId}`}
             class={twJoin(
                 "ml-4 text-xs",
-                error && "text-tertiary",
+                error && "text-semantic-error",
                 helperText && "text-content/70",
             )}
         >

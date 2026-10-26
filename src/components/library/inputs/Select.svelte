@@ -108,7 +108,7 @@
             for={finalId}
             class={twMerge(
                 "text-secondary absolute -top-2 left-3 z-10 bg-white px-1 text-xs leading-4 font-medium transition-all duration-200",
-                error && "text-tertiary",
+                error && "text-semantic-error",
             )}
         >
             {labelText}

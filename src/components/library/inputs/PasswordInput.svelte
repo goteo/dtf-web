@@ -69,7 +69,7 @@
                 for={finalId}
                 class={twMerge(
                     "absolute -top-3 left-3 bg-white px-1 text-sm transition-colors",
-                    error && "text-tertiary",
+                    error && "text-semantic-error",
                     disabled && "opacity-70",
                 )}
             >
@@ -112,7 +112,7 @@
             id={error ? errorId : helperId}
             class={twJoin(
                 "ml-4 text-xs",
-                error && "text-tertiary",
+                error && "text-semantic-error",
                 helperText && "text-content/70",
             )}
         >

@@ -198,7 +198,7 @@
         for={inputId}
         class={twJoin(
             "text-secondary absolute top-0 left-4 -translate-y-1/2 transform bg-white px-1 text-sm font-medium transition-all",
-            error && "text-tertiary",
+            error && "text-semantic-error",
         )}
     >
         {labelText}
@@ -233,12 +233,12 @@
             for={inputId}
             class={twMerge("flex h-32 cursor-pointer flex-col justify-center gap-2", dropzoneClass)}
         >
-            <UploadFileIcon class={twJoin("size-10 self-center", error && "text-tertiary")} />
+            <UploadFileIcon class={twJoin("size-10 self-center", error && "text-semantic-error")} />
             <!-- Text comes from i18n only, so inline markup (e.g. <u>) is safe to render -->
             <p
                 class={twJoin(
                     "text-content overflow-hidden text-base font-normal text-ellipsis",
-                    error && "text-tertiary",
+                    error && "text-semantic-error",
                 )}
             >
                 {@html placeholder}
@@ -337,7 +337,7 @@
         <p
             class={twJoin(
                 "ml-4 text-xs",
-                error && "text-tertiary",
+                error && "text-semantic-error",
                 helperText && "text-content/70",
             )}
         >
