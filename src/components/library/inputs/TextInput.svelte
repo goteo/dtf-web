@@ -71,9 +71,13 @@
         <span
             id={`helper-${finalId}`}
             class={twJoin(
-                "ml-4 text-xs",
+                
+                "ml-4 block text-xs",
+               
                 error && "text-tertiary",
+               
                 helperText && "text-content/70",
+            ,
             )}
         >
             {error || helperText}
