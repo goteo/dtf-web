@@ -883,6 +883,14 @@
             "title": "Amb quin equip comptes?",
             "description": "Descriu amb quin equip comptes i si heu tingut experiències prèvies realitzant projectes com aquest"
           },
+          "knowledge": {
+            "title": "Quin coneixement, programació, metodologies o conjunts de dades es podran reutilitzar obertament?",
+            "description": "Coneixement, eines i recursos que es mantenen en comú"
+          },
+          "infra": {
+            "title": "Com redueix el projecte la dependència de les plataformes propietàries i reforça la capacitat de la comunitat per governar les seves pròpies infraestructures digitals?",
+            "description": "Reducció de la dependència de les plataformes propietàries i la capacitat de la comunitat per governar la seva pròpia infraestructura digital"
+          },
           "communicationStrategy": {
             "title": "Explica'ns el teu pla de difusió",
             "description": "En cas que la teva campanya sigui aprovada, quin serà el teu pla de difusió?"

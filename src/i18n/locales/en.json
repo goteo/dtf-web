@@ -883,6 +883,14 @@
             "title": "What team do you have?",
             "description": "Describe your team and any previous experiences with similar projects"
           },
+          "knowledge": {
+            "title": "What knowledge, software, methodologies or datasets will remain openly reusable?",
+            "description": "Knowledge, tools and resources that will remain in the commons"
+          },
+          "infra": {
+            "title": "How does the project reduce dependence on proprietary platforms and strengthens the community's ability to govern its own digital infrastructures?",
+            "description": "Reducing dependence on proprietary platforms and community's ability to govern its own digital infrastructure"
+          },
           "communicationStrategy": {
             "title": "Tell us about your outreach plan",
             "description": "If your campaign is approved, what will your outreach plan be?"

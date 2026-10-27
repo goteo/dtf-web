@@ -885,6 +885,14 @@
             "title": "¿Con qué equipo cuentas?",
             "description": "Describe con qué equipo cuentas y si habéis tenido experiencias previas realizando proyectos como este"
           },
+          "knowledge": {
+            "title": "¿Qué conocimientos, programas, metodologías o conjuntos de datos seguirán siendo de libre reutilización?",
+            "description": "Conocimientos, herramientas y recursos que permanecen en común"
+          },
+          "infra": {
+            "title": "¿Cómo reduce el proyecto la dependencia de plataformas propietarias y fortalece la capacidad de la comunidad para gestionar sus propias infraestructuras digitales?",
+            "description": "Reducción de la dependencia de plataformas propietarias y fortalecimiento de la capacidad de la comunidad para gestionar su propia infraestructura digital"
+          },
           "communicationStrategy": {
             "title": "Cuéntanos tu plan de difusión",
             "description": "En el caso de que tu campaña sea aprobada, ¿cuál será tu plan de difusión?"
