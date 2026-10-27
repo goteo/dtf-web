@@ -153,6 +153,18 @@
                     {#await renderMarkdown(project.descTeam!) then content}
                         {@html content}
                     {/await}
+                    <Title level={2} variant="section" class="color-secondary font-bold">
+                        {$t("pages.project.view.tabs.project.descKnowledge")}
+                    </Title>
+                    {#await renderMarkdown(project.descKnowledge!) then content}
+                        {@html content}
+                    {/await}
+                    <Title level={2} variant="section" class="color-secondary font-bold">
+                        {$t("pages.project.view.tabs.project.descInfrastructure")}
+                    </Title>
+                    {#await renderMarkdown(project.descInfrastructure!) then content}
+                        {@html content}
+                    {/await}
                 </div>
             {:else if activeTab === "budget"}
                 <div

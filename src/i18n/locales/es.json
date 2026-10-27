@@ -1120,7 +1120,9 @@
             "title": "Información de campaña",
             "descAbout": "Descripción del proyecto. Características, fortalezas y diferencias.",
             "descGoal": "Motivación y a quién va dirigido el proyecto.",
-            "descTeam": "Experiencia previa y equipo."
+            "descTeam": "Experiencia previa y equipo.",
+            "descKnowledge": "Conocimientos, herramientas y recursos que permanecen en común.",
+            "descInfrastructure": "Reducción de la dependencia de plataformas propietarias y fortalecimiento de la capacidad de la comunidad para gestionar su propia infraestructura digital."
           },
           "rewards": "Recompensas",
           "budget": {

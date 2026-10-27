@@ -1118,7 +1118,9 @@
             "title": "Campaign information",
             "descAbout": "Project description. Features, strengths, and differentiators.",
             "descGoal": "Motivation and who the project is aimed at.",
-            "descTeam": "Previous experience and team."
+            "descTeam": "Previous experience and team.",
+            "descKnowledge": "Knowledge, tools and resources that will remain in the commons.",
+            "descInfrastructure": "Reducing dependence on proprietary platforms and community's ability to govern its own digital infrastructure"
           },
           "rewards": "Rewards",
           "budget": {

@@ -1118,7 +1118,9 @@
             "title": "Informació de campanya",
             "descAbout": "Descripció del projecte. Característiques, fortaleses i diferències.",
             "descGoal": "Motivació i a qui va dirigit el projecte.",
-            "descTeam": "Experiència prèvia i equip."
+            "descTeam": "Experiència prèvia i equip.",
+            "descKnowledge": "Coneixement, eines i recursos que es mantenen en comú.",
+            "descInfrastructure": "Reducció de la dependència de les plataformes propietàries i la capacitat de la comunitat per governar la seva pròpia infraestructura digital."
           },
           "rewards": "Recompenses",
           "budget": {
