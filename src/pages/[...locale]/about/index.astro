@@ -4,9 +4,9 @@ import Layout from "../../../layouts/Layout.astro";
 import Table from "../../../components/about/Table.svelte";
 import Cell from "../../../components/about/Cell.svelte";
 import Carousel from "../../../components/library/layout/Carousel.svelte";
-import handshakeImage from "./img/handshake.png";
-import meetingImage from "./img/meeting.png";
-import calendarImage from "./img/calendar.png";
+import handshakeImage from "./img/1.png";
+import meetingImage from "./img/2.png";
+import calendarImage from "./img/3.jpg";
 
 const { t, lang } = Astro.locals;
 
@@ -48,7 +48,7 @@ const phases = [
                         <div class="flex justify-center">
                             <a
                                 href="/create/project"
-                                class="bg-primary text-secondary inline-flex items-center justify-center rounded-3xl px-8 py-4 font-bold transition hover:opacity-90"
+                                class="bg-primary inline-flex items-center justify-center rounded-3xl px-8 py-4 font-bold text-white transition hover:opacity-90"
                             >
                                 {t("pages.about.hero.cta")}
                             </a>

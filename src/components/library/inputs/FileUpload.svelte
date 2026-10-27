@@ -24,7 +24,7 @@
         dropzoneClass = "",
         maxSizeMB,
         class: className = "",
-    } = $props<{
+    }: {
         accept?: string[];
         files?: UploadedObject[];
         multiple?: boolean;
@@ -37,7 +37,7 @@
         dropzoneClass?: ClassNameValue;
         maxSizeMB?: number;
         class?: ClassNameValue;
-    }>();
+    } = $props();
 
     let isDragging = $state(false);
     let uploading = $state<Map<string, number>>(new Map());
@@ -118,7 +118,7 @@
             };
 
             files = [...files, uploaded];
-            error = null;
+            error = undefined;
             onUpload?.(uploaded);
         } catch (err) {
             error = err instanceof Error ? err.message : $t("system.error.file.uploadFailed");
@@ -133,7 +133,7 @@
     async function handleFiles(fileList: FileList | null) {
         if (!fileList) return;
 
-        error = null;
+        error = undefined;
 
         const validFiles = Array.from(fileList).filter(validate);
 
@@ -198,7 +198,7 @@
         for={inputId}
         class={twJoin(
             "text-secondary absolute top-0 left-4 -translate-y-1/2 transform bg-white px-1 text-sm font-medium transition-all",
-            error && "text-tertiary",
+            error && "text-semantic-error",
         )}
     >
         {labelText}
@@ -233,12 +233,12 @@
             for={inputId}
             class={twMerge("flex h-32 cursor-pointer flex-col justify-center gap-2", dropzoneClass)}
         >
-            <UploadFileIcon class={twJoin("size-10 self-center", error && "text-tertiary")} />
+            <UploadFileIcon class={twJoin("size-10 self-center", error && "text-semantic-error")} />
             <!-- Text comes from i18n only, so inline markup (e.g. <u>) is safe to render -->
             <p
                 class={twJoin(
                     "text-content overflow-hidden text-base font-normal text-ellipsis",
-                    error && "text-tertiary",
+                    error && "text-semantic-error",
                 )}
             >
                 {@html placeholder}
@@ -334,7 +334,13 @@
     </div>
 
     {#if error || helperText}
-        <p class={twJoin("ml-4 text-xs", error && "text-tertiary", helperText && "text-gray-500")}>
+        <p
+            class={twJoin(
+                "ml-4 text-xs",
+                error && "text-semantic-error",
+                helperText && "text-content/70",
+            )}
+        >
             {error || helperText}
         </p>
     {/if}

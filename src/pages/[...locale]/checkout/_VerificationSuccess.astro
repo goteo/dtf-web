@@ -47,17 +47,10 @@ const { total, selectedGateway, donatedProjects, projectSupports, postPaymentUrl
         >
             <Summary client:load {total} />
             <RewardClaims client:load userId={session!.user.id!} {checkoutId} />
-            <div class="w-full lg:block" id="checkout-details">
-                <div class="flex flex-col">
-                    <p class="text-content text-sm">
-                        {t("pages.checkout.summary.deduct")}
-                    </p>
-                </div>
-            </div>
             <div class="flex flex-col items-end">
                 <a
                     href={postPaymentUrl}
-                    class="bg-primary text-secondary w-fit cursor-pointer rounded-3xl px-6 py-4 font-bold"
+                    class="bg-primary w-fit cursor-pointer rounded-3xl px-6 py-4 font-bold text-white"
                 >
                     {t("common.continue")}
                 </a>

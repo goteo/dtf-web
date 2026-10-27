@@ -1,3 +1,4 @@
+import Fediverse from "../components/icons/social/Fediverse.svelte";
 import Mastodon from "../components/icons/social/Mastodon.svelte";
 
 import type { FooterConfig } from "../types/footer";
@@ -20,7 +21,7 @@ export const FOOTER_DATA: FooterConfig = {
                     labelKey: "What is Goteo?",
                 },
                 {
-                    href: "/static/dtf",
+                    href: "/about-dtf",
                     labelKey: "What is DTF?",
                 },
             ],
@@ -36,6 +37,11 @@ export const FOOTER_DATA: FooterConfig = {
         {
             icon: Mastodon,
             href: "https://mastodon.social/@platoniq",
+            labelKey: "Mastodon",
+        },
+        {
+            icon: Fediverse,
+            href: "https://social.democratictech.fund/@DemocraticTechFund",
             labelKey: "Mastodon",
         },
     ],

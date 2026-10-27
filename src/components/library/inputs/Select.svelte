@@ -107,8 +107,8 @@
         <label
             for={finalId}
             class={twMerge(
-                "text-secondary absolute -top-2 left-3 bg-white px-1 text-xs leading-4 font-medium transition-all duration-200",
-                error && "text-tertiary",
+                "text-secondary absolute -top-2 left-3 z-10 bg-white px-1 text-xs leading-4 font-medium transition-all duration-200",
+                error && "text-semantic-error",
             )}
         >
             {labelText}
@@ -118,36 +118,83 @@
         </label>
     {/if}
 
-    <!-- Select Element -->
-    <select
-        {name}
-        {required}
-        {disabled}
-        id={finalId}
-        bind:value
-        onclick={() => (isOpen = !isOpen)}
-        onchange={handleChange}
-        onblur={handleBlur}
-        onkeydown={(e) => e.key === "Escape" && (isOpen = false)}
-        class={twMerge(
-            "w-full appearance-none rounded-lg border bg-white px-4 py-4 pr-10 text-base leading-6 transition-colors focus:outline-none disabled:cursor-not-allowed",
-            error ? "border-tertiary text-tertiary focus:ring-0" : "border-secondary focus:ring-0",
-            className,
-        )}
-        aria-invalid={error ? "true" : "false"}
-        aria-describedby={error ? errorId : helperText ? helperId : undefined}
-        style="-webkit-appearance: none; -moz-appearance: none; appearance: none; background-image: none;"
-    >
-        {@render children()}
-    </select>
-    <div class="pointer-events-none absolute top-1/2 right-3 -translate-y-1/2">
-        <Chevron direction={isOpen ? "up" : "down"} width="20" height="20" />
+    <!-- Select Element (own relative box so the chevron centers on the select, not the helper) -->
+    <div class="relative">
+        <select
+            {name}
+            {required}
+            {disabled}
+            id={finalId}
+            bind:value
+            onclick={() => (isOpen = !isOpen)}
+            onchange={handleChange}
+            onblur={handleBlur}
+            onkeydown={(e) => e.key === "Escape" && (isOpen = false)}
+            class={twMerge(
+                "w-full appearance-none rounded-lg border bg-white px-4 py-4 pr-10 text-base leading-6 transition-colors focus:outline-none disabled:cursor-not-allowed",
+                error
+                    ? "border-tertiary text-tertiary focus:ring-0"
+                    : "border-secondary focus:ring-0",
+                className,
+            )}
+            aria-invalid={error ? "true" : "false"}
+            aria-describedby={error ? errorId : helperText ? helperId : undefined}
+            style="background-image: none;"
+        >
+            {@render children()}
+        </select>
+        <div class="pointer-events-none absolute top-1/2 right-3 -translate-y-1/2">
+            <Chevron direction={isOpen ? "up" : "down"} width="20" height="20" />
+        </div>
     </div>
 
     <!-- Helper Text -->
     {#if !error && helperText}
-        <p id={helperId} class="mt-1 text-xs text-gray-500">
+        <p id={helperId} class="text-content/70 ml-4 text-xs">
             {helperText}
         </p>
     {/if}
 </div>
+
+<style>
+    /*
+     * Where supported, render the option list in-page so it always opens below the field
+     * (native pickers flip upwards when there is more room above). Other browsers keep the
+     * plain native select via the `appearance-none` class.
+     */
+    @supports (appearance: base-select) {
+        select,
+        select::picker(select) {
+            appearance: base-select;
+        }
+
+        select::picker-icon {
+            display: none;
+        }
+
+        select::picker(select) {
+            position-area: bottom span-right;
+            position-try-fallbacks: none;
+            max-height: 100%;
+            margin-top: 0.25rem;
+            border: 1px solid var(--color-grey);
+            border-radius: 0.5rem;
+            background-color: var(--color-white);
+            color: var(--color-content);
+        }
+
+        select :global(option) {
+            padding: 0.5rem 1rem;
+        }
+
+        select :global(option:hover),
+        select :global(option:focus-visible),
+        select :global(option:checked) {
+            background-color: var(--color-grey);
+        }
+
+        select :global(option:disabled) {
+            opacity: 0.5;
+        }
+    }
+</style>

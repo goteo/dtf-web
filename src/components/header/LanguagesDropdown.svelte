@@ -36,7 +36,7 @@
 >
     <button
         type="button"
-        class="flex w-full items-center gap-2 rounded-md border border-gray-300 px-4 py-2 transition-colors hover:bg-gray-100"
+        class="border-grey hover:bg-grey focus-visible:bg-grey flex w-full items-center gap-2 rounded-md border px-4 py-2 transition-colors"
         onclick={toggleDropdown}
         aria-haspopup="true"
         aria-expanded={open}
@@ -48,12 +48,12 @@
 
     {#if open}
         <div
-            class="absolute z-10 mt-1 max-h-96 w-full overflow-y-auto rounded-md border border-gray-200 bg-white shadow-md"
+            class="border-grey absolute z-10 mt-1 max-h-96 w-full overflow-y-auto rounded-md border bg-white shadow-md"
         >
             {#each languages as lang (lang)}
                 <button
                     type="button"
-                    class="flex w-full items-center gap-2 px-3 py-2 text-left transition-colors hover:bg-gray-100"
+                    class="hover:bg-grey focus-visible:bg-grey flex w-full items-center gap-2 px-3 py-2 text-left transition-colors"
                     onclick={() => selectLanguage(lang)}
                 >
                     {getLanguageDisplayName(lang)}

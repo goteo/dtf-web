@@ -11,6 +11,7 @@
     import { toCollectionItems } from "../../../utils/hydra";
     import Button from "../../library/buttons/Button.svelte";
     import DropdownMenu from "../../library/dropdown/DropdownMenu.svelte";
+    import UserResultRow from "../../library/dropdown/UserResultRow.svelte";
     import Title from "../../library/typography/Title.svelte";
 
     import type { DropdownOption } from "../../library/dropdown/dropdown.types";
@@ -42,6 +43,7 @@
             id: apiUsersGetCollectionUrl + "/" + user.id,
             label: user.displayName || user.email || user.handle || String(user.id),
             selected: false,
+            raw: user,
         };
     }
 
@@ -91,7 +93,7 @@
 
 <Modal
     bind:open
-    closeBtnClass="top-3 end-3 cursor-pointer bg-transparent text-secondary hover:bg-transparent hover:text-secondary hover:scale-110 transition-transform duration-200 transform focus:ring-0 shadow-none dark:text-secondary dark:hover:text-secondary dark:hover:bg-transparent"
+    closeBtnClass="top-10 end-12 p-1.5 [&_svg]:size-7 cursor-pointer bg-transparent text-secondary hover:bg-transparent hover:text-secondary hover:scale-110 transition-transform duration-200 transform focus:ring-0 shadow-none dark:text-secondary dark:hover:text-secondary dark:hover:bg-transparent"
     class="backdrop:bg-overlay fixed top-1/2 left-1/2 mx-2 flex w-full max-w-120 -translate-x-1/2 -translate-y-1/2 flex-col gap-6 overflow-visible rounded-3xl border-b-0 bg-white p-6 shadow-lg backdrop:backdrop-blur-[5px] sm:mx-4 lg:mx-0"
     headerClass="border-b-0 md:p-0 p-0"
     bodyClass="md:p-0 p-0 border-b-0 overflow-y-visible"
@@ -120,7 +122,13 @@
         onSearch={handleSearch}
         label={title}
         selectedFirst
-    />
+    >
+        {#snippet row(option)}
+            {#if option.raw}
+                <UserResultRow user={option.raw as User} />
+            {/if}
+        {/snippet}
+    </DropdownMenu>
 
     {#snippet footer()}
         <Button kind="secondary" disabled={!selected.length} onclick={confirm} class="w-fit">

@@ -61,7 +61,7 @@
         class={twMerge(
             "flex min-h-16 max-w-[80%] flex-col items-end justify-end rounded-tl-2xl rounded-tr-2xl border px-4 lg:max-w-[40%]",
             isOwn
-                ? "bg-primary border-primary text-secondary rounded-br-none rounded-bl-2xl pt-4 pb-2"
+                ? "bg-primary border-primary rounded-br-none rounded-bl-2xl pt-4 pb-2 text-white"
                 : "border-secondary text-content rounded-br-2xl rounded-bl-none bg-white py-2",
         )}
     >
@@ -76,10 +76,7 @@
         </div>
         <time
             datetime={date.toISOString()}
-            class={twJoin(
-                "flex items-center gap-2 text-xs",
-                isOwn ? "text-secondary" : "text-content",
-            )}
+            class={twJoin("flex items-center gap-2 text-xs", isOwn ? "text-white" : "text-content")}
         >
             <span>{formatTime(date, $locale)}</span>
             <span>{formatDate(date, $locale)}</span>

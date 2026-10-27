@@ -386,6 +386,7 @@
     },
     "header": {
       "search": "Cercar",
+      "menu": "Menú",
       "createProject": "Crea el teu projecte",
       "goToProfile": "Anar al perfil",
       "admin": "Administració"
@@ -782,7 +783,7 @@
       }
     },
     "index": {
-      "title": "Goteo"
+      "title": "DTFCrowd by Goteo"
     },
     "project": {
       "edit": {
@@ -2222,7 +2223,7 @@
       }
     },
     "static": {
-      "title": "Goteo"
+      "title": "DTFCrowd by Goteo"
     },
     "profile": {
       "share": "Comparteix",

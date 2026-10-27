@@ -255,12 +255,7 @@
             class="border-grey flex h-full max-h-126.5 w-full max-w-109.25 flex-col bg-white"
             style="box-shadow: 0 35px 10px 0 rgba(0, 0, 0, 0.00), 0 22px 9px 0 rgba(0, 0, 0, 0.01), 0 13px 8px 0 rgba(0, 0, 0, 0.05), 0 6px 6px 0 rgba(0, 0, 0, 0.09), 0 1px 3px 0 rgba(0, 0, 0, 0.10);"
         >
-            <Title
-                level={2}
-                variant="section"
-                color="secondary"
-                class={twJoin("mb-2", !form.title && "opacity-24")}
-            >
+            <Title level={2} variant="section" color="secondary" class="mb-2">
                 {form.title || $t("pages.project.create.description.titlePlaceholder")}
             </Title>
             <p

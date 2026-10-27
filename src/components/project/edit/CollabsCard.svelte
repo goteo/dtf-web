@@ -86,7 +86,7 @@
         </Title>
 
         {#if collab.description}
-            <div class="marked-content line-clamp-7 text-sm whitespace-pre-line text-gray-800">
+            <div class="marked-content text-content line-clamp-7 text-sm whitespace-pre-line">
                 {#await renderMarkdown(collab.description ?? "") then description}
                     {@html description}
                 {/await}

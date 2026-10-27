@@ -57,9 +57,7 @@
                     id="header-main"
                 >
                     <div class="flex items-center gap-2 md:gap-4">
-                        <a href="/" class="shrink-0"
-                            ><Logo class="h-20 w-40 sm:h-24 sm:w-48 lg:h-30 lg:w-60" /></a
-                        >
+                        <a href="/" class="shrink-0"><Logo class="w-40 sm:w-56" /></a>
                     </div>
                     <nav>
                         <ul class="flex items-center gap-1 md:gap-4">
@@ -85,7 +83,7 @@
                                             {:else}
                                                 <UserIcon class="size-8" />
                                             {/if}
-                                            <span class="hidden md:inline">
+                                            <span class="hidden max-w-40 truncate sm:inline">
                                                 {$t("common.greeting")}, {$session.user.displayName}
                                             </span>
                                         </button>
@@ -157,27 +155,26 @@
                                     </div>
                                 {/if}
                             </li>
-                            <li class="hidden items-center pr-2 md:flex">
+                            <li class="hidden items-center pr-2 lg:flex">
                                 <UiLanguages />
                             </li>
-                            <li class="flex items-center md:hidden">
+                            <li class="hidden lg:block">
+                                <HeaderButtons />
+                            </li>
+                            <li class="flex items-center {children ? '' : 'lg:hidden'}">
                                 <button
-                                    type="button"
-                                    class="cursor-pointer p-1"
+                                    class="cursor-pointer"
                                     onclick={menuToggle}
-                                    aria-label={menuOpen ? $t("common.close") : $t("common.menu")}
+                                    aria-label={$t("common.header.menu")}
                                     aria-expanded={menuOpen}
                                 >
                                     <Hamburger
                                         close={menuOpen}
                                         class="text-primary"
-                                        barClass="fill-secondary"
+                                        barClass="fill-white"
                                     />
                                 </button>
                             </li>
-                            <div class="hidden md:block">
-                                <HeaderButtons />
-                            </div>
                         </ul>
                     </nav>
                 </div>
@@ -191,9 +188,11 @@
                     : 'grid-rows-[0fr]'}"
             >
                 <div class="overflow-hidden">
-                    <div class="flex flex-col gap-4 p-4 md:hidden">
-                        <HeaderButtons />
+                    <div
+                        class="mx-2 flex flex-wrap items-center justify-between gap-4 py-4 md:mx-6 lg:hidden"
+                    >
                         <UiLanguages />
+                        <HeaderButtons />
                     </div>
                     {@render children?.()}
                 </div>

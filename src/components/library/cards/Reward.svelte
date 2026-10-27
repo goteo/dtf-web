@@ -80,7 +80,7 @@
 
         {#if reward.description}
             <div
-                class="marked-content line-clamp-6 max-h-[11.2em] overflow-hidden mask-[linear-gradient(to_bottom,black_80%,transparent)] text-sm whitespace-pre-line text-gray-800"
+                class="marked-content text-content line-clamp-6 max-h-[11.2em] overflow-hidden mask-[linear-gradient(to_bottom,black_80%,transparent)] text-sm whitespace-pre-line"
             >
                 <div class="min-w-0">
                     {#await renderMarkdown(reward.description) then description}

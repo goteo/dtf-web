@@ -386,6 +386,7 @@
     },
     "header": {
       "search": "Search",
+      "menu": "Menu",
       "createProject": "Create your project",
       "goToProfile": "Go to Profile",
       "admin": "Admin"
@@ -782,7 +783,7 @@
       }
     },
     "index": {
-      "title": "Goteo"
+      "title": "DTFCrowd by Goteo"
     },
     "project": {
       "edit": {
@@ -2222,7 +2223,7 @@
       }
     },
     "static": {
-      "title": "Goteo"
+      "title": "DTFCrowd by Goteo"
     },
     "profile": {
       "share": "Share",
