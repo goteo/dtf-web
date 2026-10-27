@@ -17,7 +17,6 @@
     import ProjectPreviewModal from "./ProjectPreviewModal.svelte";
     import { t } from "../../../i18n/store";
     import { apiProjectsIdPatch } from "../../../openapi/client";
-    import { zProjectProjectUpdationDto } from "../../../openapi/client/zod.gen";
     import { validate } from "../../../utils/validation";
     import LanguagesDropdown from "../../header/LanguagesDropdown.svelte";
     import EditIcon from "../../icons/actions/Edit.svelte";
@@ -29,6 +28,7 @@
 
     import type { ProjectDraftStore } from "../../../stores/drafts/draftsStore";
     import type { Snippet } from "svelte";
+    import { zApiProjectsIdPatchBody } from "../../../openapi/client/zod.gen";
 
     let {
         draft,
@@ -62,7 +62,7 @@
     let previewOpen = $state(false);
 
     function handleTitleChange(title: string) {
-        const [error] = validate(title, zProjectProjectUpdationDto.shape.title);
+        const [error] = validate(title, zApiProjectsIdPatchBody.shape.title);
 
         if (!error) {
             draft.patch({ title });
