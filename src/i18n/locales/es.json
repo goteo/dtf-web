@@ -391,6 +391,7 @@
       "menu": "Menú",
       "createProject": "Crea tu proyecto",
       "goToProfile": "Ir a Perfil",
+      "menu": "Menú",
       "admin": "Administración"
     },
     "footer": {
@@ -1121,6 +1122,7 @@
             "optimal": "Óptimo",
             "raised": "Obtenido",
             "total": "Total",
+            "empty": "Esta campaña no tiene partidas de presupuesto.",
             "chartTitle": "Este es el presupuesto para esta campaña. Descubre cómo tu apoyo puede llevarnos al éxito.",
             "chart": {
               "secondRound": "2ª Ronda",

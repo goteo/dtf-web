@@ -58,8 +58,7 @@
             selectedBudgetDescription.trim() !== "",
     );
 
-    // Per field, and only from the user's own edits: the modal moves focus on open, so a blur
-    // would flag every empty field before anyone typed.
+    // Per-field, set only on input: blur fires when the modal moves focus on open.
     const untouched = { title: false, type: false, amount: false, description: false };
     let touched = $state({ ...untouched });
 

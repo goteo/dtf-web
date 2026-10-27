@@ -18,6 +18,7 @@
         zCreateProjectForm,
         zProjectCampaignRelease,
     } from "../../validation/projectValidation";
+    import Spinner from "../icons/status/Spinner.svelte";
     import Button from "../library/buttons/Button.svelte";
     import BaseCard from "../library/cards/BaseCard.svelte";
     import CategorySelect from "../library/inputs/CategorySelect.svelte";
@@ -43,6 +44,7 @@
 
     let validation: Partial<Record<keyof typeof form, z.core.$ZodIssue[]>> = $state({});
     let isValid = $derived(Object.values(validation).every((issues) => !issues?.length));
+    let isSubmitting = $state(false);
 
     function validate(field: keyof typeof form) {
         const result = zCreateProjectForm.shape[field].safeParse(form[field]);
@@ -144,6 +146,8 @@
             return;
         }
 
+        isSubmitting = true;
+
         const { data: project, error } = await apiProjectsPost({
             baseUrl: "/api/relay",
             headers: { "Content-Language": $locale },
@@ -153,6 +157,7 @@
 
         if (error) {
             console.error(error);
+            isSubmitting = false;
             return;
         }
 
@@ -246,8 +251,12 @@
                 error={getValidationMessage("calendar")}
             />
         </div>
-        <Button type="submit" disabled={!isValid}>
-            {$t("pages.project.create.submit")}
+        <Button type="submit" disabled={!isValid || isSubmitting}>
+            {#if isSubmitting}
+                <Spinner />
+            {:else}
+                {$t("pages.project.create.submit")}
+            {/if}
         </Button>
     </form>
     <div class="ml-auto">

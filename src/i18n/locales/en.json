@@ -389,6 +389,7 @@
       "menu": "Menu",
       "createProject": "Create your project",
       "goToProfile": "Go to Profile",
+      "menu": "Menu",
       "admin": "Admin"
     },
     "footer": {
@@ -477,6 +478,15 @@
       }
     },
     "_": "Page-specific content (/home, /search, /project/[id], etc.)",
+    "register": {
+      "title": "Create your account",
+      "description": "Sign up for Goteo to support projects and create your own.",
+      "existUserInfo": "If you are already a Goteo user, log in with your account.",
+      "submit": "Create account",
+      "organization": {
+        "taxIdHelper": "Company tax ID"
+      }
+    },
     "checkout": {
       "metadata": {
         "title": "Checkout",
@@ -1110,6 +1120,7 @@
             "optimal": "Optimum",
             "raised": "Raised",
             "total": "Total",
+            "empty": "This project has no budget items.",
             "chartTitle": "This is the budget for this campaign. Discover how your support can lead us to success.",
             "chart": {
               "secondRound": "2nd Round",
@@ -1551,7 +1562,8 @@
         "tabs": {
           "hero": "Hero",
           "highlights": "Featured Projects",
-          "featuredUsers": "Promoters"
+          "featuredUsers": "Promoters",
+          "banners": "Banners"
         },
         "hero": {
           "title": "Hero",
@@ -2075,7 +2087,6 @@
         "description": "Manage platform communication",
         "tabs": {
           "blog": "Blog",
-          "banners": "Announcements",
           "newsletter": "Newsletter"
         },
         "banners": {

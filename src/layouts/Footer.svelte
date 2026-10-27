@@ -51,7 +51,7 @@
                                 {$t("common.footer.funding.partOf")}
                             </Title>
                             <div
-                                class="flex items-center gap-2 sm:gap-3"
+                                class="flex flex-wrap items-center gap-2 sm:gap-3"
                                 role="list"
                                 aria-label={$t("common.footer.a11y.partnerOrganizations")}
                             >

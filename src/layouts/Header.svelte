@@ -83,7 +83,7 @@
                                             {:else}
                                                 <UserIcon class="size-8" />
                                             {/if}
-                                            <span class="hidden max-w-40 truncate sm:inline">
+                                            <span class="hidden max-w-40 truncate sm:inline-block">
                                                 {$t("common.greeting")}, {$session.user.displayName}
                                             </span>
                                         </button>
@@ -188,9 +188,7 @@
                     : 'grid-rows-[0fr]'}"
             >
                 <div class="overflow-hidden">
-                    <div
-                        class="mx-2 flex flex-wrap items-center justify-between gap-4 py-4 md:mx-6 lg:hidden"
-                    >
+                    <div class="flex flex-wrap items-center justify-between gap-4 p-4 lg:hidden">
                         <UiLanguages />
                         <HeaderButtons />
                     </div>
