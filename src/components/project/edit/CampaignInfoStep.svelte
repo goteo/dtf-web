@@ -83,6 +83,14 @@
         draft.patch({ descTeam: doc });
     }
 
+    function handleKnowledgeChange(doc: string) {
+        draft.patch({ descKnowledge: doc });
+    }
+
+    function handleInfrastructureChange(doc: string) {
+        draft.patch({ descInfrastructure: doc });
+    }
+
     function handleCommunicationStrategyChange(doc: string) {
         // TO-DO: Add descStart to Project resource
         // draft.patch({ descStrat: doc });
@@ -257,6 +265,52 @@
                 onChange={handleTeamChange}
                 placeholder={$t("common.textPlaceholder")}
                 ariaDescribedBy="desc-team-help"
+                minLength={20}
+            />
+        </section>
+
+        <!-- Description: Knowledge Section -->
+        <section data-field="desc-knowledge" class="space-y-4">
+            <div>
+                <label for="desc-knowledge" class="mb-1 block text-2xl font-bold text-black">
+                    {$t("pages.project.edit.campaignInfo.knowledge.title")}
+                    <span aria-label="required">*</span>
+                </label>
+                <p class="text-content text-base" id="desc-knowledge-help">
+                    {$t("pages.project.edit.campaignInfo.knowledge.description")}
+                </p>
+            </div>
+
+            <RichTextEditor
+                id="knowledge"
+                format="markdown"
+                value={$draft.latest.descKnowledge || ""}
+                onChange={handleKnowledgeChange}
+                placeholder={$t("common.textPlaceholder")}
+                ariaDescribedBy="desc-knowledge-help"
+                minLength={20}
+            />
+        </section>
+
+        <!-- Description: Infrastructure Section -->
+        <section data-field="desc-infra" class="space-y-4">
+            <div>
+                <label for="desc-infra" class="mb-1 block text-2xl font-bold text-black">
+                    {$t("pages.project.edit.campaignInfo.infra.title")}
+                    <span aria-label="required">*</span>
+                </label>
+                <p class="text-content text-base" id="desc-infra-help">
+                    {$t("pages.project.edit.campaignInfo.infra.description")}
+                </p>
+            </div>
+
+            <RichTextEditor
+                id="infra"
+                format="markdown"
+                value={$draft.latest.descInfrastructure || ""}
+                onChange={handleInfrastructureChange}
+                placeholder={$t("common.textPlaceholder")}
+                ariaDescribedBy="desc-infra-help"
                 minLength={20}
             />
         </section>
