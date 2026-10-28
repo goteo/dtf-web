@@ -17,7 +17,8 @@
         size="md"
         kind="ghost"
         onclick={openSearch}
-        class="inset-0 border-none pl-0 inset-ring-0"
+        aria-label={$t("common.header.search")}
+        class="size-10 border-none p-1 inset-ring-0"
     >
         <SearchIcon width="32" height="32" class="text-content" />
     </Button>

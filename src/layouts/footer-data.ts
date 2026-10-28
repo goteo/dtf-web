@@ -5,11 +5,38 @@ import type { FooterConfig } from "../types/footer";
 
 export const FOOTER_DATA: FooterConfig = {
     funding: [
-        { src: "/images/partners/PLATONIQ.png", alt: "Platoniq Foundation" },
-        { src: "/images/partners/FKI.svg", alt: "Free Knowledge Institute" },
-        { src: "/images/partners/COMMONSNETWORK.jpeg", alt: "Commons Network" },
-        { src: "/images/partners/OPENTECH.png", alt: "OpenTech AUC" },
-        { src: "/images/partners/NEWSMAST.svg", alt: "Newsmast Foundation" },
+        {
+            src: "/images/partners/fki.svg",
+            alt: "Free Knowledge Institute",
+            href: "https://freeknowledge.eu",
+        },
+        {
+            src: "/images/partners/commons_network.svg",
+            alt: "Commons Network",
+            href: "https://commonsnetwork.org",
+        },
+        {
+            src: "/images/partners/platoniq_goteo.png",
+            alt: "Goteo / Platoniq",
+            href: "https://www.goteo.org",
+        },
+        { src: "/images/partners/waag.png", alt: "Waag Futurelab", href: "https://waag.org" },
+        { src: "/images/partners/ecommons.svg", alt: "eCommons", href: "https://ecommons.space" },
+        {
+            src: "/images/partners/coopcloud.svg",
+            alt: "Co-op Cloud",
+            href: "https://coopcloud.tech",
+        },
+        {
+            src: "/images/partners/newsmast-foundation.svg",
+            alt: "Newsmast Foundation",
+            href: "https://newsmastfoundation.org",
+        },
+        {
+            src: "/images/partners/OPENTECH.png",
+            alt: "OpenTech (AUC)",
+            href: "https://opentech-auc.org",
+        },
     ],
     partOf: [],
     navColumns: [

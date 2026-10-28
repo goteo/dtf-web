@@ -21,16 +21,14 @@
                 class={[
                     "grid-cols-1 items-center gap-12",
                     hasMedia ? "lg:grid-cols-2" : "lg:grid-cols-3",
-                ]}
+                ].join(" ")}
             >
                 <!-- Hero Content -->
                 <div class={["space-y-8", !hasMedia && "lg:col-span-2"]}>
-                    <h1
-                        class="text-primary text-4xl leading-tight font-bold lg:text-5xl xl:text-6xl"
-                    >
+                    <h1 class="display-heading text-content text-3xl sm:text-4xl xl:text-5xl">
                         {hero.title}
                     </h1>
-                    <div class="marked-content space-y-1 text-lg leading-relaxed text-neutral-500">
+                    <div class="marked-content text-content space-y-1 text-lg leading-relaxed">
                         {@html content}
                     </div>
 
@@ -39,7 +37,7 @@
                         {#if hero.primaryCtaText && hero.primaryCtaLink}
                             <a
                                 href={hero.primaryCtaLink}
-                                class="text-primary bg-purple-soft inline-block rounded-full border-0 px-8 py-4 text-center font-semibold whitespace-nowrap transition-all duration-200 hover:opacity-90"
+                                class="text-on-primary bg-primary hover:bg-primary-hover inline-block rounded-full border-0 px-8 py-4 text-center font-semibold whitespace-nowrap transition-all duration-200 hover:opacity-90"
                             >
                                 {hero.primaryCtaText}
                             </a>
@@ -47,7 +45,7 @@
                         {#if hero.secondaryCtaText && hero.secondaryCtaLink}
                             <a
                                 href={hero.secondaryCtaLink}
-                                class="text-content inline-block rounded-full border-0 px-8 py-4 text-center font-semibold whitespace-nowrap transition-all duration-200 hover:opacity-90"
+                                class="text-content hover:bg-content/10 inline-block rounded-full border-0 px-8 py-4 text-center font-semibold whitespace-nowrap transition-all duration-200 hover:opacity-90"
                             >
                                 {hero.secondaryCtaText}
                             </a>

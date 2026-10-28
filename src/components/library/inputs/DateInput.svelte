@@ -254,7 +254,7 @@
             <button
                 type="button"
                 onclick={apply}
-                class="bg-primary mt-6 h-14 w-full rounded-3xl text-lg font-bold text-white hover:cursor-pointer"
+                class="bg-primary text-on-primary mt-6 h-14 w-full rounded-3xl text-lg font-bold hover:cursor-pointer"
             >
                 {$t("domain.dateInput.apply")}
             </button>

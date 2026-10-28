@@ -394,7 +394,7 @@
     },
     "footer": {
       "funding": {
-        "title": "Finança:",
+        "title": "Entitats col·laboradores",
         "partOf": "Som part de:"
       },
       "navigation": {
@@ -435,7 +435,7 @@
       },
       "a11y": {
         "footerHeading": "Peu de pàgina",
-        "fundingPartners": "Organitzacions finançadores",
+        "fundingPartners": "Entitats col·laboradores",
         "partnerOrganizations": "Organitzacions associades",
         "footerNavigation": "Navegació del peu de pàgina",
         "legalNavigation": "Navegació legal",

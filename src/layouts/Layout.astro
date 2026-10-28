@@ -23,11 +23,11 @@ const preloadedFaces: FontPreloadFilter = [{ style: "normal", subset: "latin" }]
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
         <link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml" />
         <title>{title}</title>
-        <Font cssVariable="--font-karla" preload={preloadedFaces} />
+        <Font cssVariable="--font-atkinson-hyperlegible" preload={preloadedFaces} />
         <Font cssVariable="--font-boldonse" preload={preloadedFaces} />
         <Metatags {title} {description} {keywords} />
     </head>
-    <body class="bg-white">
+    <body class="bg-page">
         <slot />
         <script is:inline>
             /**

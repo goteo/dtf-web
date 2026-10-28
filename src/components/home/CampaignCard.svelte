@@ -109,19 +109,19 @@ Converted from CampaignCard.astro to maintain exact functionality
 
 <div
     class={twMerge(
-        "border-grey bg-purple-soft grow basis-0 rounded-xl border-2 shadow-[0px_1px_3px_0px_rgba(0,0,0,0.1)]",
+        "border-grey bg-purple-soft grow basis-0 overflow-hidden rounded-xl border-2 shadow-[0px_1px_3px_0px_rgba(0,0,0,0.1)]",
         sizeClasses,
         className,
     )}
     data-testid="campaign-card"
 >
     <a href="/project/{campaign.slug}">
-        <div class="flex flex-col gap-6">
+        <div class="flex flex-col">
             <div class="relative">
                 <img
                     src={campaign.image}
                     alt={campaign.title}
-                    class="h-80 w-full rounded-t-xl object-cover md:h-97.25"
+                    class="h-80 w-full object-cover md:h-97.25"
                 />
 
                 <div class="absolute top-4 left-4 flex flex-wrap gap-2">
@@ -134,7 +134,7 @@ Converted from CampaignCard.astro to maintain exact functionality
                             <span>{$t("pages.home.campaigns.finished")}</span>
                         </Tag>
                     {:else if daysRemaining !== undefined}
-                        <Tag variant="bold">
+                        <Tag variant="bold" class="rounded-full px-3">
                             <Clock width={16} height={16} />
                             <span>
                                 {$t("pages.home.campaigns.daysRemaining", { days: daysRemaining })}
@@ -165,7 +165,7 @@ Converted from CampaignCard.astro to maintain exact functionality
                 <Title
                     level={3}
                     variant="subsection"
-                    class="text-primary line-clamp-2 h-16 leading-8"
+                    class="text-content line-clamp-2 h-16 leading-8"
                 >
                     {campaign.title}
                 </Title>

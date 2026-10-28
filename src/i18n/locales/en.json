@@ -394,7 +394,7 @@
     },
     "footer": {
       "funding": {
-        "title": "Funded by:",
+        "title": "Partners",
         "partOf": "We are part of:"
       },
       "navigation": {
@@ -435,7 +435,7 @@
       },
       "a11y": {
         "footerHeading": "Footer",
-        "fundingPartners": "Funding organizations",
+        "fundingPartners": "Partner organizations",
         "partnerOrganizations": "Partner organizations",
         "footerNavigation": "Footer navigation",
         "legalNavigation": "Legal navigation",

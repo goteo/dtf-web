@@ -10,7 +10,7 @@
     export type TitleAlign = "left" | "center" | "right";
 
     export const SIZES: Record<TitleVariant, string> = {
-        display: "text-4xl leading-10 sm:text-5xl sm:leading-[3rem] md:text-[56px] md:leading-16",
+        display: "text-3xl sm:text-4xl md:text-5xl",
         headline: "text-3xl leading-9 sm:text-4xl sm:leading-11 md:text-[40px] md:leading-12",
         section: "text-2xl leading-8 sm:text-3xl sm:leading-10 md:text-double md:leading-10",
         subsection: "text-xl leading-7 sm:text-2xl sm:leading-8",
@@ -18,9 +18,9 @@
     };
 
     const DEFAULT_WEIGHTS: Record<TitleVariant, TitleWeight> = {
-        display: "medium",
-        headline: "medium",
-        section: "medium",
+        display: "normal",
+        headline: "bold",
+        section: "bold",
         subsection: "bold",
         field: "bold",
     };
@@ -71,6 +71,7 @@
             align === "center" && "text-center",
             align === "right" && "text-right",
             classes,
+            variant === "display" && "display-heading",
         ),
     );
 

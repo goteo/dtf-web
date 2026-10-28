@@ -44,7 +44,7 @@ const calls: CallCard[] = [
 ];
 ---
 
-<section class="bg-secondary w-full text-white">
+<section class="bg-inverse text-on-inverse w-full">
     <div class="wrapper relative !my-[-32px]">
         <!-- Two top info panels -->
         <div class="flex flex-col gap-6">
@@ -54,10 +54,10 @@ const calls: CallCard[] = [
                     class="backdrop-blur-md/0 flex flex-col gap-10 rounded-2xl bg-[rgba(143,124,146,0.4)] p-10"
                 >
                     <div class="text-purple flex flex-col gap-4 text-balance">
-                        <h2 class="text-purple text-4xl font-bold">
+                        <h2 class="display-heading text-4xl">
                             {t("pages.home.matchfunding.title")}
                         </h2>
-                        <p class="text-base leading-6 text-white">
+                        <p class="text-on-inverse text-base leading-6">
                             {t("pages.home.matchfunding.description")}
                         </p>
                     </div>
@@ -87,13 +87,15 @@ const calls: CallCard[] = [
                             style={`background-image:url(${card.background});`}
                         >
                             <div class="relative z-10 flex flex-col gap-10 p-10">
-                                <div class="flex w-1/2 flex-col gap-4">
-                                    <h4 class="text-3xl font-bold">{card.title}</h4>
+                                <div class="flex w-full flex-col gap-4 lg:w-2/3">
+                                    <h4 class="text-2xl font-bold">{card.title}</h4>
                                     <p>{card.description}</p>
                                     <div class="flex gap-6">
                                         {card.stats.map((s) => (
                                             <div class="flex flex-col">
-                                                <span class="text-sm text-white">{s.label}</span>
+                                                <span class="text-on-inverse text-sm">
+                                                    {s.label}
+                                                </span>
                                                 <span class="text-2xl font-bold">{s.value}</span>
                                             </div>
                                         ))}
@@ -103,7 +105,7 @@ const calls: CallCard[] = [
                             <div class="border-xl absolute top-6 right-6 z-20 rounded bg-white px-2 py-1 text-xs font-medium">
                                 <img class="h-12" src={card.tag} />
                             </div>
-                            <div class="pointer-events-none absolute inset-0 z-0 bg-gradient-to-r from-black/70 to-black/30" />
+                            <div class="from-inverse/90 to-inverse/50 pointer-events-none absolute inset-0 z-0 bg-gradient-to-r" />
                         </div>
                     ))
                 }

@@ -11,43 +11,53 @@
 @source "../components/**/*.{astro,svelte}";
 @source "../../node_modules/flowbite";
 @source "../../node_modules/flowbite-svelte";
-@custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-    /* Light Theme (default) */
-    --color-primary: #fd7524;
-    --color-secondary: #fd7524;
-    --color-tertiary: #a66bff;
-    --color-content: #f2f2f7;
+    /* Democratic Tech Fund palette; legacy white/black utilities mean surface/ink. */
+    --color-primary: #cf2626;
+    --color-primary-hover: #a81f1f;
+    --color-secondary: #2c1212;
+    --color-tertiary: #cf2626;
 
-    /* Extended color tokens for components */
-    --color-white: #0f0f14;
-    --color-black: #ffffff;
-    --color-grey: #23262e;
-    --color-purple-soft: #171a22;
-    --color-purple-med: #211c36;
+    --color-content: #2c1212;
+    --color-page: #f3e7d0;
+    --color-on-primary: #ffffff;
+    --color-inverse: #2c1212;
+    --color-on-inverse: #f3e7d0;
 
-    /* Scrim tras diálogos y modales: gris cálido al 70% */
-    --color-overlay: #878282b2;
+    --color-white: #ffffff;
+    --color-black: #2c1212;
+    --color-grey: #d8cbbb;
+    --color-purple-soft: #ffffff;
+    --color-purple-med: #f3e7d0;
 
-    --color-variant1: #4a1e2b;
-    --color-variant2: #24d3a1;
-    --color-variant3: #2ee6f6;
-    --color-variant4: #ffc857;
+    --color-overlay: #2c1212b2;
 
-    --color-semantic-error: #ff6b6b;
-    --color-semantic-success: #24d3a1;
-    --color-semantic-notification: #183b46;
-    --color-semantic-warning: #ffc857;
+    --color-variant1: #ffd98a;
+    --color-variant2: #146f00;
+    --color-variant3: #f3e7d0;
+    --color-variant4: #ffd98a;
+
+    --color-semantic-error: #cf2626;
+    --color-semantic-success: #146f00;
+    --color-semantic-notification: #f3e7d0;
+    --color-semantic-warning: #ee7e2c;
 
     /* Declared by the `<Font>` component in Layout.astro; already carries its own fallbacks. */
-    --font-body: var(--font-karla);
-    --font-title: var(--font-boldonse);
+    --font-weight-bold: 600;
+    --font-body: var(--font-atkinson-hyperlegible);
+    --font-title: var(--font-atkinson-hyperlegible);
+    --font-display: var(--font-boldonse);
     --text-body-small: 0.875rem;
     --text-double: 2rem;
 }
 
 @layer base {
+    b,
+    strong {
+        font-weight: var(--font-weight-bold);
+    }
+
     /*
      * flowbite-svelte's Modal scrolls its body, but its height cap is a typo (`max-h-[90hv]`),
      * so the browser's default dialog scroll kicked in too and showed a second scrollbar.
@@ -56,29 +66,39 @@
         max-height: 100vh;
         overflow: hidden;
     }
-
-    [data-theme="dark"] {
-        --color-primary: #3d3d3d;
-        --color-secondary: #94a3b8;
-
-        /* Dark theme variants for extended tokens */
-        --color-grey: #2a2a2a;
-        --color-variant1: #3a3551;
-        --color-white: #f8f9fa;
-        --color-purple-soft: #1a1730;
-        --color-purple-med: #22203a;
-    }
-
-    /* flowbite-svelte's Modal caps height with `max-h-[90hv]` (typo, no effect),
-       so the <dialog> scrolled on top of the modal body. */
-    dialog {
-        max-height: 100vh;
-        overflow: hidden;
-    }
 }
 
 :root {
+    color-scheme: light;
     --sticky-top: calc(var(--header-height, 0px) + 1.5rem);
+}
+
+/* Follow the browser/system theme without JavaScript or saved overrides. */
+@media (prefers-color-scheme: dark) {
+    :root {
+        color-scheme: dark;
+
+        --color-secondary: #f3e7d0;
+        --color-tertiary: #ee7e2c;
+
+        --color-content: #f3e7d0;
+        --color-page: #2c1212;
+
+        --color-white: #3b2321;
+        --color-black: #f3e7d0;
+        --color-grey: #654c44;
+        --color-purple-soft: #3b2321;
+        --color-purple-med: #482e28;
+
+        --color-variant1: #503529;
+        --color-variant2: #8bc777;
+        --color-variant3: #482e28;
+        --color-variant4: #ffd98a;
+
+        --color-semantic-error: #ff9595;
+        --color-semantic-success: #8bc777;
+        --color-semantic-notification: #482e28;
+    }
 }
 
 html {
@@ -89,8 +109,8 @@ body {
     font-family: var(--font-body);
     font-style: normal;
     font-weight: 400;
-    font-size: var(--body-regular);
-    line-height: 140%;
+    font-size: 1rem;
+    line-height: 1.6;
     color: var(--color-content);
     /* Safety net against horizontal scroll; `clip` keeps `position: sticky` working. */
     overflow-x: clip;
@@ -110,8 +130,25 @@ body.grid {
 
 h1,
 h2,
-h3 {
+h3,
+h4,
+h5,
+h6 {
     font-family: var(--font-title);
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.display-heading {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-synthesis: none;
+    line-height: 1.5;
+}
+
+:focus-visible {
+    outline: 2px solid var(--color-tertiary);
+    outline-offset: 4px;
 }
 
 astro-island {

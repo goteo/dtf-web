@@ -131,7 +131,7 @@ export default defineConfig({
                  */
                 "img-src 'self' data: blob: https:",
                 "media-src 'self' data: blob: https:",
-                // Karla is self-hosted through the fonts API — nothing else is needed.
+                // Fonts are self-hosted through the fonts API — nothing else is needed.
                 "font-src 'self'",
                 /**
                  * The tight one, and the reason for the whole exercise: this is what data
@@ -177,21 +177,19 @@ export default defineConfig({
     },
 
     /**
-     * Karla is downloaded from Google at build time and served from our own origin, so no
+     * Fonts are downloaded from Google at build time and served from our own origin, so no
      * request reaches a third party while a visitor reads a page.
      *
-     * Karla is a variable font: the whole `200 800` range travels in a single file, which is
-     * why asking for every weight the interface uses costs no extra request. The previous
-     * `@fontsource/karla` import only shipped weight 400, so the ~360 `font-bold`,
-     * `font-medium` and `font-semibold` usages were being faked by the browser.
+     * Atkinson Hyperlegible Next is variable, so interface emphasis can use a true 600 weight.
+     * Load the full range in upright and italic styles.
      *
      * `latin-ext` is not optional here: Catalan needs U+0140 (`ŀ`) for the geminate `l·l`.
      */
     fonts: [
         {
             provider: fontProviders.google(),
-            name: "Karla",
-            cssVariable: "--font-karla",
+            name: "Atkinson Hyperlegible Next",
+            cssVariable: "--font-atkinson-hyperlegible",
             weights: ["200 800"],
             styles: ["normal", "italic"],
             subsets: ["latin", "latin-ext"],
@@ -200,8 +198,8 @@ export default defineConfig({
             provider: fontProviders.google(),
             name: "Boldonse",
             cssVariable: "--font-boldonse",
-            weights: ["200 800"],
-            styles: ["normal", "italic"],
+            weights: [400],
+            styles: ["normal"],
             subsets: ["latin", "latin-ext"],
         },
     ],

@@ -78,14 +78,17 @@ const campaigns = await Promise.all(
         </h2>
 
         <!-- "View All" Button -->
-        <a href="/search" aria-label={t("pages.home.campaigns.viewAll")}>
-            <Button kind="ghost" size="md">
-                <Arrow />
-                <span class="text-secondary text-base font-bold">
-                    {t("pages.home.campaigns.viewAll")}
-                </span>
-            </Button>
-        </a>
+        <Button
+            href="/search"
+            aria-label={t("pages.home.campaigns.viewAll")}
+            kind="ghost"
+            size="md"
+        >
+            <Arrow />
+            <span class="text-secondary text-base font-bold">
+                {t("pages.home.campaigns.viewAll")}
+            </span>
+        </Button>
     </div>
 
     <!-- Campaigns Grid: 3 columns max, 2 rows, large cards take 2 columns -->

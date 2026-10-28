@@ -52,12 +52,11 @@
                     return () => observer.disconnect();
                 }}
             >
-                <div
-                    class="flex w-full items-center justify-between px-2 py-3 md:px-4 md:py-6"
-                    id="header-main"
-                >
+                <div class="flex w-full items-center justify-between p-2 md:p-4" id="header-main">
                     <div class="flex items-center gap-2 md:gap-4">
-                        <a href="/" class="shrink-0"><Logo class="w-40 sm:w-56" /></a>
+                        <a href="/" class="shrink-0 rounded-lg transition-opacity hover:opacity-75"
+                            ><Logo class="w-40 sm:w-56" /></a
+                        >
                     </div>
                     <nav>
                         <ul class="flex items-center gap-1 md:gap-4">
@@ -72,7 +71,7 @@
                                         <button
                                             onclick={userDropdownToggle}
                                             use:clickOutside={userDropdownClose}
-                                            class="flex w-full cursor-pointer items-center gap-1"
+                                            class="hover:bg-grey/30 flex w-full cursor-pointer items-center gap-1 rounded-lg p-1 transition-colors"
                                         >
                                             {#if $session.user.avatar}
                                                 <img
@@ -121,7 +120,7 @@
                                             type="button"
                                             onclick={userDropdownToggle}
                                             use:clickOutside={userDropdownClose}
-                                            class="flex w-full cursor-pointer items-center gap-1"
+                                            class="hover:bg-grey/30 flex w-full cursor-pointer items-center gap-1 rounded-lg p-1 transition-colors"
                                             aria-haspopup="menu"
                                             aria-expanded={userDropdownOpen}
                                         >
@@ -163,15 +162,16 @@
                             </li>
                             <li class="flex items-center {children ? '' : 'lg:hidden'}">
                                 <button
-                                    class="cursor-pointer"
+                                    class="text-content hover:bg-content/10 flex size-10 cursor-pointer items-center justify-center rounded-lg p-1 transition-colors"
                                     onclick={menuToggle}
                                     aria-label={$t("common.header.menu")}
                                     aria-expanded={menuOpen}
                                 >
                                     <Hamburger
                                         close={menuOpen}
-                                        class="text-primary"
-                                        barClass="fill-white"
+                                        width="32"
+                                        height="32"
+                                        class="text-content"
                                     />
                                 </button>
                             </li>

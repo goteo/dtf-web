@@ -21,7 +21,7 @@
                 >
                     {#if config.funding.length > 0}
                         <!-- Funding Partners -->
-                        <div class="flex flex-col gap-4 md:flex-row md:items-center md:gap-6">
+                        <div class="flex w-full flex-col gap-4 md:gap-6">
                             <Title
                                 level={3}
                                 variant="field"
@@ -31,13 +31,24 @@
                                 {$t("common.footer.funding.title")}
                             </Title>
                             <div
-                                class="flex items-center gap-4"
+                                class="flex w-full items-center gap-4"
                                 role="list"
                                 aria-label={$t("common.footer.a11y.fundingPartners")}
                             >
-                                <div class="flex flex-wrap items-center gap-3 sm:gap-4">
+                                <div
+                                    class="grid w-full grid-cols-2 items-center gap-3 md:grid-cols-4"
+                                >
                                     {#each config.funding as partner (partner.src)}
-                                        <FooterPartnerImage src={partner.src} alt={partner.alt} />
+                                        <div
+                                            role="listitem"
+                                            class="flex h-20 min-w-0 items-center justify-center rounded-xl bg-[#ffffff] p-4"
+                                        >
+                                            <FooterPartnerImage
+                                                src={partner.src}
+                                                alt={partner.alt}
+                                                href={partner.href}
+                                            />
+                                        </div>
                                     {/each}
                                 </div>
                             </div>
@@ -73,7 +84,7 @@
     {/if}
 
     <div
-        class="relative rounded-t-3xl bg-white bg-size-[116%_114%] bg-position-[-127%_42%] bg-no-repeat text-black min-[700px]:bg-size-[64%_108%] min-[700px]:bg-position-[114%]"
+        class="bg-inverse text-on-inverse relative rounded-t-3xl bg-size-[116%_114%] bg-position-[-127%_42%] bg-no-repeat min-[700px]:bg-size-[64%_108%] min-[700px]:bg-position-[114%]"
         style="background-image: url('{config.brand.backgroundImage}');"
     >
         <!-- Main Footer Content -->
@@ -94,7 +105,7 @@
 
                         {#each config.navColumns as column (column.titleKey)}
                             <div class="space-y-2">
-                                <Title level={4} variant="field" class="leading-6">
+                                <Title level={4} variant="field" class="text-on-inverse leading-6">
                                     {$t(column.titleKey)}
                                 </Title>
                                 <ul class="space-y-1 text-xs leading-5 sm:text-sm sm:leading-6">

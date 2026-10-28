@@ -140,7 +140,7 @@
                         }}
                     />
                 </p>
-                <Title level={1} variant="section" class="text-content">
+                <Title level={1} variant="section" class="display-heading text-content">
                     {project.title}
                 </Title>
             </div>

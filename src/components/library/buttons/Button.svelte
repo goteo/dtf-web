@@ -10,10 +10,10 @@
     };
 
     const kindStyles = {
-        primary: "bg-primary",
-        secondary: "bg-variant1 text-content",
-        ghost: "inset-ring-1 inset-ring-secondary text-content",
-        invert: "text-content",
+        primary: "bg-primary text-on-primary enabled:hover:bg-primary-hover",
+        secondary: "bg-variant1 text-content enabled:hover:brightness-90",
+        ghost: "inset-ring-1 inset-ring-secondary text-content enabled:hover:bg-content/10",
+        invert: "text-content enabled:hover:bg-content/10",
     };
 
     interface Props extends Omit<HTMLButtonAttributes, "class"> {
@@ -44,6 +44,9 @@
             sizeStyles[size],
             kindStyles[kind],
             href && "hover:underline",
+            href && kind === "primary" && "hover:bg-primary-hover",
+            href && kind === "secondary" && "hover:brightness-90",
+            href && (kind === "ghost" || kind === "invert") && "hover:bg-content/10",
             classes,
         ),
     );

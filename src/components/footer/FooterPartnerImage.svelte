@@ -32,14 +32,18 @@
         {src}
         {alt}
         loading="lazy"
-        class={twMerge("w-auto transition-opacity hover:opacity-90", sizeStyles[size], customClass)}
+        class={twMerge(
+            "w-auto max-w-full object-contain transition-opacity hover:opacity-75",
+            sizeStyles[size],
+            customClass,
+        )}
     />
 {/snippet}
 
 {#if href}
     <a
         {href}
-        class="focus:ring-purple-soft focus:ring-offset-purple-soft rounded-lg focus:ring-2 focus:ring-offset-2 focus:outline-none"
+        class="focus:ring-purple-soft focus:ring-offset-purple-soft block min-w-0 rounded-lg focus:ring-2 focus:ring-offset-2 focus:outline-none"
         aria-label={hrefAriaLabel}
         target={external ? "_blank" : undefined}
         rel={external ? "noopener noreferrer" : undefined}
