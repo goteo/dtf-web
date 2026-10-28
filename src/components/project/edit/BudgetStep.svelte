@@ -3,7 +3,7 @@
     import CreateCard from "./CreateCard.svelte";
     import { t } from "../../../i18n/store";
     import { withoutCache } from "../../../openapi/cacheInterceptor";
-    import { apiProjectBudgetItemsGetCollection, type MoneyInput } from "../../../openapi/client";
+    import { apiProjectBudgetItemsGetCollection, apiProjectsIdPatch, type MoneyInput } from "../../../openapi/client";
     import { formatCurrency } from "../../../utils/currencies";
     import { addMoney } from "../../../utils/money";
     import Button from "../../library/buttons/Button.svelte";
@@ -12,6 +12,8 @@
     import LoadingSpinner from "../../search/LoadingSpinner.svelte";
 
     import type { ProjectDraftStore } from "../../../stores/drafts/draftsStore";
+    import ActionableButton from "../../library/buttons/ActionableButton.svelte";
+    import Bullet from "../../icons/Bullet.svelte";
 
     let {
         draft,
@@ -82,6 +84,17 @@
     function reloadBudgetItems() {
         minBudgetItems = loadMinBudgetItems();
         optBudgetItems = loadOptBudgetItems();
+    }
+
+    async function handleSave() {
+        const { data: project } = await apiProjectsIdPatch({
+            baseUrl: "/api/relay",
+            path: { id: String($draft.actual.id) },
+            headers: { "Content-Language": $draft.lang },
+            body: $draft.patch,
+        });
+
+        draft.update({ actual: project, patch: {} });
     }
 </script>
 
@@ -177,7 +190,20 @@
 
 <div class="mt-10 flex">
     <!-- TO-DO: Enable navigation to the "About you" step. That step is implemented in a separate task. -->
-    <Button kind="secondary" size="md" class="min-w-50" onclick={() => onContinue?.()}>
-        {$t("pages.project.edit.budget.continue")}
-    </Button>
+    <ActionableButton
+        kind="primary"
+        size="md"
+        class="disabled:pointer-events-none"
+        action={handleSave}
+        autoreset={1000}
+        title={$draft.isDirty ? $t("pages.project.edit.header.unsentChanges") : $t("common.save")}
+    >
+        {$t("common.save")}
+        {#snippet actionedChildren()}
+            {$t("common.saved")}
+        {/snippet}
+    </ActionableButton>
+    {#if $draft.isDirty}
+        <Bullet class="absolute top-0 right-0" />
+    {/if}
 </div>

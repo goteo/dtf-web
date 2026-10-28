@@ -84,9 +84,7 @@
         draft.patch({ subtitle });
     }
 
-    async function handleTabChange(tabId: string) {
-        await handleSave();
-
+    function handleTabChange(tabId: string) {
         onStepChange?.(tabId);
     }
 
