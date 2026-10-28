@@ -1705,6 +1705,8 @@ export const zProjectProjectUpdationDtoJsonMergePatch = z.object({
     descAbout: z.string().min(20).optional(),
     descGoal: z.string().min(20).optional(),
     descTeam: z.string().min(20).optional(),
+    descKnowledge: z.string().min(20).optional(),
+    descInfrastructure: z.string().min(20).optional(),
     deadline: z.enum(['minimum', 'optimum']).optional(),
     calendar: zProjectCalendar.optional(),
     video: z.url().optional(),
@@ -2533,6 +2535,8 @@ export const zProject = z.object({
     descAbout: z.string().optional(),
     descGoal: z.string().optional(),
     descTeam: z.string().optional(),
+    descKnowledge: z.string().optional(),
+    descInfrastructure: z.string().optional(),
     video: zProjectVideo.readonly().optional(),
     status: z.enum([
         'in_draft',
@@ -2586,6 +2590,8 @@ export const zProjectCsv = z.object({
     descAbout: z.string().optional(),
     descGoal: z.string().optional(),
     descTeam: z.string().optional(),
+    descKnowledge: z.string().optional(),
+    descInfrastructure: z.string().optional(),
     video: zProjectVideoCsv.readonly().optional(),
     status: z.enum([
         'in_draft',
@@ -2639,6 +2645,8 @@ export const zProjectJsonld = zHydraItemBaseSchema.and(z.object({
     descAbout: z.string().optional(),
     descGoal: z.string().optional(),
     descTeam: z.string().optional(),
+    descKnowledge: z.string().optional(),
+    descInfrastructure: z.string().optional(),
     video: zProjectVideoJsonld.readonly().optional(),
     status: z.enum([
         'in_draft',
