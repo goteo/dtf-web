@@ -11,7 +11,7 @@ import { withoutCache } from "../../../openapi/cacheInterceptor";
 const { t, lang, langs, session } = Astro.locals;
 
 if (!session) {
-    return goto("/login", { query: { callback: "/create/project" } });
+    return goto("/register", { query: { callback: "/create/project" } });
 }
 
 const { data: categoriesRaw } = await withoutCache(() =>
