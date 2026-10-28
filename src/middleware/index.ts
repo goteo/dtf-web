@@ -9,6 +9,18 @@ import type { Locale } from "../i18n/locales/index";
 import type { APIContext } from "astro";
 
 export const onRequest = defineMiddleware(async (context: APIContext, next) => {
+    /**
+     * The `goteo.org` zone does not force HTTPS, and the API rejects OAuth flows from
+     * `http` origins. Local dev and preview are served over plain HTTP, so they are exempt.
+     */
+    const { protocol, hostname } = context.url;
+    if (protocol === "http:" && hostname !== "localhost" && hostname !== "127.0.0.1") {
+        const url = new URL(context.url);
+        url.protocol = "https:";
+
+        return goto(url, { type: "permanent" });
+    }
+
     const session = await resolveSession(context);
 
     const auth = await checkAuth(context, session);
