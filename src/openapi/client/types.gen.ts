@@ -2412,14 +2412,6 @@ export type Project = {
      */
     descTeam?: string;
     /**
-     * Rich-text (markdown allowed) about knowledge, tools and resources that will remain in the commons.
-     */
-    descKnowledge?: string;
-    /**
-     * Rich-text (markdown allowed) about how does the project reduce dependence on proprietary platforms.
-     */
-    descInfrastructure?: string;
-    /**
      * Extracted embedding data from the Project's video.
      */
     readonly video?: ProjectVideo;
@@ -2540,14 +2532,6 @@ export type ProjectProjectUpdationDtoJsonMergePatch = {
      */
     descTeam?: string;
     /**
-     * Rich-text (markdown allowed) about knowledge, tools and resources that will remain in the commons.
-     */
-    descKnowledge?: string;
-    /**
-     * Rich-text (markdown allowed) about how does the project reduce dependence on proprietary platforms.
-     */
-    descInfrastructure?: string;
-    /**
      * On `minimum`, Project will campaign until the minimum deadline.\
      * On `optimum`, Project will campaing until the minimum deadline,
      * and then until the optimum deadline if it did raise the minimum.
@@ -2634,14 +2618,6 @@ export type ProjectCsv = {
      * Rich-text (markdown) about team and previous experience.
      */
     descTeam?: string;
-    /**
-     * Rich-text (markdown allowed) about knowledge, tools and resources that will remain in the commons.
-     */
-    descKnowledge?: string;
-    /**
-     * Rich-text (markdown allowed) about how does the project reduce dependence on proprietary platforms.
-     */
-    descInfrastructure?: string;
     /**
      * Extracted embedding data from the Project's video.
      */
@@ -2751,14 +2727,6 @@ export type ProjectJsonld = HydraItemBaseSchema & {
      * Rich-text (markdown) about team and previous experience.
      */
     descTeam?: string;
-    /**
-     * Rich-text (markdown allowed) about knowledge, tools and resources that will remain in the commons.
-     */
-    descKnowledge?: string;
-    /**
-     * Rich-text (markdown allowed) about how does the project reduce dependence on proprietary platforms.
-     */
-    descInfrastructure?: string;
     /**
      * Extracted embedding data from the Project's video.
      */

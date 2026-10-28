@@ -511,6 +511,27 @@
         }
       },
       "changeAddressLabel": "Enviar esta recompensa a una dirección distinta a la mia.",
+      "shipping": {
+        "title": "¿Dónde enviamos tus recompensas?",
+        "description": "Algunas de tus recompensas se envían por correo. Indícanos a qué dirección enviar cada una.",
+        "noAddress": "Todavía no tienes ninguna dirección guardada.",
+        "missing": "Añade una dirección de envío para continuar.",
+        "addAddress": "Añadir dirección",
+        "error": "No se ha podido guardar la dirección.",
+        "modal": {
+          "title": "Dirección de envío",
+          "newAddress": "Nueva dirección"
+        },
+        "fields": {
+          "firstName": "Nombre",
+          "lastName": "Apellidos",
+          "line1": "Dirección",
+          "line2": "Piso, puerta, etc. (opcional)",
+          "city": "Ciudad",
+          "postCode": "Código postal",
+          "country": "País"
+        }
+      },
       "title": "Caja",
       "summary": {
         "toRecipient": "{{ amount }} a {{ name }}",
@@ -531,6 +552,9 @@
         },
         "data": {
           "title": "Tus datos"
+        },
+        "shipping": {
+          "title": "Envío"
         },
         "payment": {
           "title": "Método de pago"
@@ -926,6 +950,8 @@
               "descriptionHelper": "La descripción puede contener texto enriquecido, pero se recortará en tarjetas pequeñas",
               "moneyLabel": "Precio",
               "moneyHelper": "Indica la donación mínima a realizar para reclamar esta recompensa",
+              "shippingLabel": "Esta recompensa se envía por correo",
+              "shippingHelper": "Pediremos una dirección de envío a quien la elija.",
               "coverLabel": "Portada",
               "coverPlaceholder": "Haz click o arrastra aquí tu archivo para subirlo",
               "coverHelper": "Este archivo será la portada de tu recompensa"
@@ -2306,7 +2332,20 @@
         "subtitle": "Presenta proyectos o financia iniciativas. Completa tu perfil con una buena presentación, enlaces relevantes y una foto que te identifique.",
         "sidebar": {
           "publicProfile": "Perfil público",
-          "personalProfile": "Perfil personal"
+          "personalProfile": "Perfil personal",
+          "addresses": "Direcciones"
+        },
+        "addresses": {
+          "title": "Direcciones de envío",
+          "subtitle": "Gestiona las direcciones a las que te enviamos las recompensas.",
+          "empty": "Todavía no tienes ninguna dirección guardada.",
+          "add": "Añadir dirección",
+          "edit": "Editar dirección",
+          "default": "Predeterminada",
+          "makeDefault": "Hacer predeterminada",
+          "defaultError": "No se ha podido cambiar la dirección predeterminada.",
+          "deleteTitle": "¿Borrar esta dirección?",
+          "deleteError": "No se puede borrar una dirección que ya se ha usado en un pedido."
         },
         "profile": {
           "uploadImage": "Sube nueva imagen",
