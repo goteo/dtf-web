@@ -84,6 +84,12 @@
         draft.patch({ subtitle });
     }
 
+    async function handleTabChange(tabId: string) {
+        await handleSave();
+
+        onStepChange?.(tabId);
+    }
+
     async function handleSave() {
         const { data: project } = await apiProjectsIdPatch({
             baseUrl: "/api/relay",
@@ -188,7 +194,7 @@
 
         <!-- Tab Navigation -->
         <div class="mb-8">
-            <TabNavigation tabs={steps} currentTab={step} onTabClick={(s) => onStepChange?.(s)} />
+            <TabNavigation tabs={steps} currentTab={step} onTabClick={handleTabChange} />
         </div>
 
         <!-- Step Content -->
