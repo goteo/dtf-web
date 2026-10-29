@@ -36,7 +36,7 @@
                                 aria-label={$t("common.footer.a11y.fundingPartners")}
                             >
                                 <div
-                                    class="grid w-full grid-cols-2 items-center gap-3 md:grid-cols-4"
+                                    class="grid w-full grid-cols-2 items-center gap-3 md:grid-cols-5"
                                 >
                                     {#each config.funding as partner (partner.src)}
                                         <div

@@ -37,6 +37,11 @@ export const FOOTER_DATA: FooterConfig = {
             alt: "OpenTech (AUC)",
             href: "https://opentech-auc.org",
         },
+        {
+            src: "/images/partners/PLATFORMCOOPS.svg",
+            alt: "Platform Coops",
+            href: "https://platformcoops.de",
+        },
     ],
     partOf: [],
     navColumns: [
