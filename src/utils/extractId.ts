@@ -1,7 +1,7 @@
 /**
  * Extracts the last numeric ID from an IRI by walking its path segments backwards.
  *
- * @param iri - A string representing an IRI (Internationalized Resource Identifier)
+ * @param iri - A string representing an IRI
  * @returns The last numeric segment as a string, or null if not found
  */
 export function extractId(iri?: string): string | null {

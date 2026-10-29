@@ -14,18 +14,13 @@ if (!session) {
     return goto("/register", { query: { callback: "/create/project" } });
 }
 
-const { data: categoriesRaw } = await withoutCache(() =>
-    apiCategoriesGetCollection({
-        headers: { "Accept-Language": langs },
-    }),
+const [{ data: categoriesRaw }, { data: themesRaw }] = await withoutCache(() =>
+    Promise.all([
+        apiCategoriesGetCollection({ headers: { "Accept-Language": langs } }),
+        apiThemesGetCollection({ headers: { "Accept-Language": langs } }),
+    ]),
 );
 const categories = toCollectionItems<Category>(categoriesRaw);
-
-const { data: themesRaw } = await withoutCache(() =>
-    apiThemesGetCollection({
-        headers: { "Accept-Language": langs },
-    }),
-);
 const themes = toCollectionItems<Theme>(themesRaw);
 ---
 
