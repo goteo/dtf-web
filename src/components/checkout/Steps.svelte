@@ -52,7 +52,7 @@
     </div>
 
     <!-- Same track as the dots, so each label sits under its own dot -->
-    <div class="mt-4 flex w-full items-start justify-between px-2 text-sm font-bold text-content">
+    <div class="text-content mt-4 flex w-full items-start justify-between px-2 text-sm font-bold">
         {#each stepsLabels as label, index}
             <div
                 class="group flex w-2 shrink-0 justify-center first:justify-start last:justify-end lg:w-3"

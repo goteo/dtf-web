@@ -17,6 +17,7 @@
     import ProjectPreviewModal from "./ProjectPreviewModal.svelte";
     import { t } from "../../../i18n/store";
     import { apiProjectsIdPatch } from "../../../openapi/client";
+    import { zApiProjectsIdPatchBody } from "../../../openapi/client/zod.gen";
     import { validate } from "../../../utils/validation";
     import LanguagesDropdown from "../../header/LanguagesDropdown.svelte";
     import EditIcon from "../../icons/actions/Edit.svelte";
@@ -28,7 +29,6 @@
 
     import type { ProjectDraftStore } from "../../../stores/drafts/draftsStore";
     import type { Snippet } from "svelte";
-    import { zApiProjectsIdPatchBody } from "../../../openapi/client/zod.gen";
 
     let {
         draft,
