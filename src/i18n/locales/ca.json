@@ -480,8 +480,8 @@
     "_": "Contingut especifíc de la pàgina (/home, /search, /project/[id], etc.)",
     "register": {
       "title": "Crea el teu compte",
-      "description": "Registra't a Goteo per donar suport a projectes i crear els teus.",
-      "existUserInfo": "Si ja ets usuari de Goteo, inicia sessió amb el teu compte.",
+      "description": "Registra't a DTFCrowd per donar suport a projectes i crear els teus.",
+      "existUserInfo": "Si ja ets usuari de DTFCrowd, inicia sessió amb el teu compte.",
       "submit": "Crea un compte",
       "organization": {
         "taxIdHelper": "CIF de l'empresa"
@@ -1227,7 +1227,7 @@
         },
         "banner": {
           "donator": {
-            "description": "Goteo pertany a la Fundació Platoniq. En col·laborar en una campanya, els teus diners seran custodiats per Platoniq i donats a {{owner}} en cas d'arribar als objectius d'èxit marcats."
+            "description": "DTFCrowd pertany a la Fundació Platoniq. En col·laborar en una campanya, els teus diners seran custodiats per Platoniq i donats a {{owner}} en cas d'arribar als objectius d'èxit marcats."
           }
         },
         "langNotAvailable": "L'idioma seleccionat \"{{lang}}\" no està disponible per a aquest projecte. Es mostra contingut en l'idioma disponible.",
@@ -1436,7 +1436,7 @@
       }
     },
     "search": {
-      "title": "Cercar projectes - Goteo",
+      "title": "Cercar projectes",
       "description": "Explora el nostre catàleg de projectes i troba el que més t'inspiri per fer la teva donació",
       "heading": "Troba els projectes que cerques",
       "subtitle": "Explora el nostre catàleg de projectes i tria el que més t'inspiri per fer la teva donació",
@@ -2323,7 +2323,7 @@
     "me": {
       "page": {
         "title": "Activitat",
-        "subtitle": "Consulta la teva activitat a Goteo"
+        "subtitle": "Consulta la teva activitat a DTFCrowd"
       },
       "nav": {
         "activity": "Activitat",

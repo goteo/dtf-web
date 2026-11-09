@@ -482,8 +482,8 @@
     "_": "Contenido específico de páginas (/home, /search, /project/[id], etc.)",
     "register": {
       "title": "Crea tu cuenta",
-      "description": "Regístrate en Goteo para apoyar proyectos y crear los tuyos.",
-      "existUserInfo": "Si ya eres usuario de Goteo, inicia sesión con tu cuenta.",
+      "description": "Regístrate en DTFCrowd para apoyar proyectos y crear los tuyos.",
+      "existUserInfo": "Si ya eres usuario de DTFCrowd, inicia sesión con tu cuenta.",
       "submit": "Crear cuenta",
       "organization": {
         "taxIdHelper": "CIF de la empresa"
@@ -703,7 +703,7 @@
         "description": "Necesitamos saber quién eres antes de pagar.",
         "registerOr": "Regístrate o",
         "loginBtnLabel": "Entra con tu cuenta",
-        "existUserInfo": "Si ya eres usuario de Goteo identifícate. Podrás hacer uso de tu monedero para realizar estas donaciones.",
+        "existUserInfo": "Si ya eres usuario de DTFCrowd identifícate. Podrás hacer uso de tu monedero para realizar estas donaciones.",
         "otherAccessMethods": "o accede con"
       }
     },
@@ -1229,7 +1229,7 @@
         },
         "banner": {
           "donator": {
-            "description": "Goteo pertenece a la Fundación Platoniq. Al colaborar en una campaña tu dinero será custodiado por Platoniq y donado a {{owner}} en caso de llegar a los objetivos de éxito marcados."
+            "description": "DTFCrowd pertenece a la Fundación Platoniq. Al colaborar en una campaña tu dinero será custodiado por Platoniq y donado a {{owner}} en caso de llegar a los objetivos de éxito marcados."
           }
         },
         "langNotAvailable": "El idioma seleccionado \"{{lang}}\" no está disponible para este proyecto. Mostrando contenido en el idioma disponible.",

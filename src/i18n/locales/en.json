@@ -481,8 +481,8 @@
     "_": "Page-specific content (/home, /search, /project/[id], etc.)",
     "register": {
       "title": "Create your account",
-      "description": "Sign up for Goteo to support projects and create your own.",
-      "existUserInfo": "If you are already a Goteo user, log in with your account.",
+      "description": "Sign up for DTFCrowd to support projects and create your own.",
+      "existUserInfo": "If you are already a DTFCrowd user, log in with your account.",
       "submit": "Create account",
       "organization": {
         "taxIdHelper": "Company tax ID"
@@ -702,7 +702,7 @@
         "description": "We need to know who you are before you pay.",
         "registerOr": "Register or",
         "loginBtnLabel": "Log in with your account",
-        "existUserInfo": "If you are already a Goteo user, sign in. You will be able to use your wallet to make these donations.",
+        "existUserInfo": "If you are already a DTFCrowd user, sign in. You will be able to use your wallet to make these donations.",
         "otherAccessMethods": "or sign in with"
       }
     },
@@ -712,7 +712,7 @@
       },
       "campaigns": {
         "title": "Most recent campaigns",
-        "tabsTitle": "Campaigns on Goteo",
+        "tabsTitle": "Some of our projects",
         "tabs": {
           "endingSoon": "Ending soon",
           "mostSuccessful": "Most successful",
@@ -1228,7 +1228,7 @@
         },
         "banner": {
           "donator": {
-            "description": "Goteo belongs to the Platoniq Foundation. When you contribute to a campaign, your money will be held by Platoniq and donated to {{owner}} if the stated success goals are reached."
+            "description": "DTFCrowd belongs to the Platoniq Foundation. When you contribute to a campaign, your money will be held by Platoniq and donated to {{owner}} if the stated success goals are reached."
           }
         },
         "langNotAvailable": "The selected language \"{{lang}}\" is not available for this project. Showing content in the available language.",
