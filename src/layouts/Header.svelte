@@ -88,9 +88,6 @@
                                 <Logo />
                             {/if}
                         </a>
-                        <div class="hidden lg:block">
-                            <HeaderButtons />
-                        </div>
                     </div>
                     <nav>
                         <ul class="flex items-center gap-1 md:gap-4">

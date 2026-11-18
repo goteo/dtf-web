@@ -84,7 +84,7 @@
 
     <div
         class={[
-            "bg-secondary relative rounded-t-3xl bg-size-[116%_114%] bg-position-[-127%_42%] bg-no-repeat min-[700px]:bg-size-[64%_108%] min-[700px]:bg-position-[114%]",
+            "bg-page text-content relative rounded-t-3xl bg-size-[116%_114%] bg-position-[-127%_42%] bg-no-repeat min-[700px]:bg-size-[64%_108%] min-[700px]:bg-position-[114%]",
             // Overlaps the logos band so its side borders run on behind the rounded corners.
             showPartners && "-mt-6",
         ]}
@@ -111,7 +111,7 @@
                                         <Title
                                             level={4}
                                             variant="field"
-                                            color="purple-soft"
+                                            color="default"
                                             class="leading-6"
                                         >
                                             {localized(column.title, lang)}
@@ -188,7 +188,7 @@
                                     <a
                                         href={link.href}
                                         data-edit="social.{index}"
-                                        class="focus:ring-purple-soft focus:ring-offset-secondary rounded-sm transition-all duration-200 hover:opacity-80 focus:ring-2 focus:ring-offset-2 focus:outline-none"
+                                        class="focus:ring-content focus:ring-offset-secondary rounded-sm transition-all duration-200 hover:opacity-80 focus:ring-2 focus:ring-offset-2 focus:outline-none"
                                         aria-label={t(`common.footer.a11y.social.${link.network}`)}
                                     >
                                         <Icon width="24" height="24" />
