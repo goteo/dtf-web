@@ -82,7 +82,7 @@
                                 <img
                                     src={logo.src}
                                     alt={logo.alt}
-                                    class="h-6 w-auto max-w-50 object-contain"
+                                    class="w-40 sm:w-56 object-contain"
                                 />
                             {:else}
                                 <Logo />
