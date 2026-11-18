@@ -11,14 +11,13 @@
     } from "../../../openapi/client";
     import { formatCurrency } from "../../../utils/currencies";
     import { sumMoney } from "../../../utils/money";
-    import Button from "../../library/buttons/Button.svelte";
+    import Bullet from "../../icons/Bullet.svelte";
+    import ActionableButton from "../../library/buttons/ActionableButton.svelte";
     import Grid from "../../library/layout/Grid.svelte";
     import Title from "../../library/typography/Title.svelte";
     import LoadingSpinner from "../../search/LoadingSpinner.svelte";
 
     import type { ProjectDraftStore } from "../../../stores/drafts/draftsStore";
-    import ActionableButton from "../../library/buttons/ActionableButton.svelte";
-    import Bullet from "../../icons/Bullet.svelte";
 
     let {
         draft,

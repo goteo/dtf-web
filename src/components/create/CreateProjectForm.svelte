@@ -1,6 +1,4 @@
 <script lang="ts">
-    import { twJoin } from "tailwind-merge";
-
     import { locale, t } from "../../i18n/store";
     import {
         type Category,

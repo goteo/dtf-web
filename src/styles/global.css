@@ -15,7 +15,7 @@
 @theme {
     /* Democratic Tech Fund palette; legacy white/black utilities mean surface/ink. */
     --color-primary: var(--custom-color-primary, #cf2626);
-    --color-primary-hover: var(--custom-color-primary-hover ,#a81f1f);
+    --color-primary-hover: var(--custom-color-primary-hover, #a81f1f);
     --color-secondary: var(--custom-color-secondary, #2c1212);
     --color-tertiary: var(--custom-color-tertiary, #cf2626);
 
