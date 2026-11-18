@@ -14,34 +14,34 @@
 
 @theme {
     /* Democratic Tech Fund palette; legacy white/black utilities mean surface/ink. */
-    --color-primary: #cf2626;
-    --color-primary-hover: #a81f1f;
-    --color-secondary: #2c1212;
-    --color-tertiary: #cf2626;
+    --color-primary: var(--custom-color-primary, #cf2626);
+    --color-primary-hover: var(--custom-color-primary-hover ,#a81f1f);
+    --color-secondary: var(--custom-color-secondary, #2c1212);
+    --color-tertiary: var(--custom-color-tertiary, #cf2626);
 
-    --color-content: #2c1212;
-    --color-page: #f3e7d0;
-    --color-on-primary: #ffffff;
-    --color-inverse: #2c1212;
-    --color-on-inverse: #f3e7d0;
+    --color-content: var(--custom-color-content, #2c1212);
+    --color-page: var(--custom-color-page, #f3e7d0);
+    --color-on-primary: var(--custom-color-on-primary, #ffffff);
+    --color-inverse: var(--custom-color-inverse, #2c1212);
+    --color-on-inverse: var(--custom-color-on-inverse, #f3e7d0);
 
-    --color-white: #ffffff;
-    --color-black: #2c1212;
-    --color-grey: #d8cbbb;
-    --color-purple-soft: #ffffff;
-    --color-purple-med: #f3e7d0;
+    --color-white: var(--custom-color-white, #ffffff);
+    --color-black: var(--custom-color-black, #2c1212);
+    --color-grey: var(--custom-color-grey, #d8cbbb);
+    --color-purple-soft: var(--custom-color-purple-soft, #ffffff);
+    --color-purple-med: var(--custom-color-purple-med, #f3e7d0);
 
-    --color-overlay: #2c1212b2;
+    --color-overlay: var(--custom-color-overlay, #2c1212b2);
 
-    --color-variant1: #ffd98a;
-    --color-variant2: #146f00;
-    --color-variant3: #f3e7d0;
-    --color-variant4: #ffd98a;
+    --color-variant1: var(--custom-color-variant1, #ffd98a);
+    --color-variant2: var(--custom-color-variant2, #146f00);
+    --color-variant3: var(--custom-color-variant3, #f3e7d0);
+    --color-variant4: var(--custom-color-variant4, #ffd98a);
 
-    --color-semantic-error: #cf2626;
-    --color-semantic-success: #146f00;
-    --color-semantic-notification: #f3e7d0;
-    --color-semantic-warning: #ee7e2c;
+    --color-semantic-error: var(--custom-color-semantic-error, #cf2626);
+    --color-semantic-success: var(--custom-color-semantic-success, #146f00);
+    --color-semantic-notification: var(--custom-color-semantic-notification, #f3e7d0);
+    --color-semantic-warning: var(--custom-color-semantic-warning, #ee7e2c);
 
     /* Declared by the `<Font>` component in Layout.astro; already carries its own fallbacks. */
     --font-weight-bold: 600;
@@ -78,26 +78,26 @@
     :root {
         color-scheme: dark;
 
-        --color-secondary: #f3e7d0;
-        --color-tertiary: #ee7e2c;
+        --color-secondary: var(--custom-dark-color-secondary, #f3e7d0);
+        --color-tertiary: var(--custom-dark-color-tertiary, #ee7e2c);
 
-        --color-content: #f3e7d0;
-        --color-page: #2c1212;
+        --color-content: var(--custom-dark-color-content, #f3e7d0);
+        --color-page: var(--custom-dark-color-page, #2c1212);
 
-        --color-white: #3b2321;
-        --color-black: #f3e7d0;
-        --color-grey: #654c44;
-        --color-purple-soft: #3b2321;
-        --color-purple-med: #482e28;
+        --color-white: var(--custom-dark-color-white, #3b2321);
+        --color-black: var(--custom-dark-color-black, #f3e7d0);
+        --color-grey: var(--custom-dark-color-grey, #654c44);
+        --color-purple-soft: var(--custom-dark-color-purple-soft, #3b2321);
+        --color-purple-med: var(--custom-dark-color-purple-med, #482e28);
 
-        --color-variant1: #503529;
-        --color-variant2: #8bc777;
-        --color-variant3: #482e28;
-        --color-variant4: #ffd98a;
+        --color-variant1: var(--custom-dark-color-variant1, #503529);
+        --color-variant2: var(--custom-dark-color-variant2, #8bc777);
+        --color-variant3: var(--custom-dark-color-variant3, #482e28);
+        --color-variant4: var(--custom-dark-color-variant4, #ffd98a);
 
-        --color-semantic-error: #ff9595;
-        --color-semantic-success: #8bc777;
-        --color-semantic-notification: #482e28;
+        --color-semantic-error: var(--custom-dark-color-semantic-error, #ff9595);
+        --color-semantic-success: var(--custom-dark-color-semantic-success, #8bc777);
+        --color-semantic-notification: var(--custom-dark-color-semantic-notification, #482e28);
     }
 }
 

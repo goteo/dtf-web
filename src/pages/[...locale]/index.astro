@@ -51,6 +51,7 @@ const featuredUsers = await getFeaturedUsers(lang);
         <Stats />
         <!-- Uncomment the matching import at the top when enabling either of these. -->
         <!-- <Stories client:load /> -->
+        <CampaignsTabs />
         {featuredUsers.length > 0 && <FeaturedUsers users={featuredUsers} client:visible />}
         <!-- <Resources /> -->
     </App>
